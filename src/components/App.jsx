@@ -67,6 +67,11 @@ function App() {
               <section className="technologies">
                 <p className="text">{technologies ||'React JS, MongoDB'}</p>
               </section>
+              <section className= "icons">
+                <a href={demo || '#'}target="_blank"><i class="fa-solid fa-globe"></i></a>
+                <a href={repo || '#'}target="_blank"><i class="fa-brands fa-github"></i></a>
+
+              </section>
             </section>
 
             <section className="info-autor">
