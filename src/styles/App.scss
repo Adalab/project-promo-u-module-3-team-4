@@ -5,10 +5,14 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 .container {
   background-color: #302c42;
   height: 100vh;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .header {
@@ -23,7 +27,7 @@
 
 .main {
   display: flex;
-  padding-top: 50px;
+  padding-top: 5rem;
   height: 80vh;
 }
 .main .title {
@@ -32,19 +36,19 @@
 }
 
 .main .ask-info {
-  padding: 20px;
+  padding: 2rem;
   text-align: center;
   color: white;
 }
 
 .main .ask-info .subtitle {
-  padding-bottom: 10px;
+  padding-bottom: 1rem;
 }
 
 .main .ask-info .line {
   width: 100%;
   border: 0;
-  height: 1px;
+  height: 0.1rem;
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0),
@@ -66,7 +70,7 @@
 .main .autor {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
   border: none;
 }
 
@@ -74,11 +78,11 @@
 .textarea {
   background-color: #302c42;
   border-color: white;
-  border-radius: 40px;
+  border-radius: 4rem;
   height: 42.72px;
   color: #ffffff;
-  padding-left: 15px;
-  padding-top: 5px;
+  padding-left: 1.5rem;
+  padding-top: 0.5rem;
 }
 .main .input::placeholder,
 .textarea::placeholder {
@@ -86,7 +90,7 @@
 }
 
 .main .textarea {
-  height: 110px;
+  height: 11rem;
 }
 
 .main .buttons-img {
@@ -95,24 +99,24 @@
 
 .main .btn,
 .main .btn-large {
-  width: 160px;
-  margin-top: 10px;
+  width: 16rem;
+  margin-top: 1rem;
   color: white;
   text-align: center;
   border: none;
 
-  height: 43px;
+  height: 4.3rem;
   background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
-  border-radius: 40px;
+  border-radius: 4rem;
 }
 
 .main .btn-large {
-  width: 200px;
-  border: solid 2px white;
+  width: 20rem;
+  border: solid 0.2rem white;
 }
 
 .main .preview {
-  padding: 20px;
+  padding: 2rem;
 }
 
 .main .preview .image {
@@ -126,13 +130,13 @@
   color: #3e3e3e;
   width: 90%;
   height: 50%;
-  transform: translateY(-100px);
+  transform: translateY(-10rem);
   margin: auto;
-  border-radius: 20px;
+  border-radius: 2rem;
   display: flex;
   flex-direction: row-reverse;
-  gap: 40px;
-  padding: 30px;
+  gap: 4rem;
+  padding: 3rem;
   overflow-y: scroll;
 }
 
@@ -143,18 +147,18 @@
 
 .info-autor .image {
   border-radius: 50%;
-  width: 80px;
-  height: 110px;
+  width: 8rem;
+  height: 11rem;
 }
 
 .info-autor .job {
   font-weight: bold;
   color: black;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .info-autor .name {
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .info-project {
@@ -162,29 +166,29 @@
 }
 
 .info-project .subtitle {
-  font-size: 14px;
+  font-size: 1.4rem;
   text-align: center;
 }
 .info-project .title {
-  font-size: 20px;
+  font-size: 2rem;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .info-project .desc {
-  font-size: 12px;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .info-project .slogan {
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 .info-project .line {
   width: 100%;
   border: 0;
-  height: 1px;
+  height: 0.1rem;
 
   background-image: linear-gradient(
     to right,
@@ -195,9 +199,9 @@
 }
 
 .btn-color {
-  border-radius: 20px;
-  width: 85px;
-  height: 30px;
+  border-radius: 2rem;
+  width: 8.5rem;
+  height: 3rem;
   font-weight: bold;
 }
 
@@ -208,16 +212,16 @@
 
 .technologies {
   background-color: lightgray;
-  border-radius: 20px;
-  font-size: 14px;
-  padding: 10px;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+  padding: 1rem;
   width: 70%;
 }
 
 .card {
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .hidden {

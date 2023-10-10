@@ -20,6 +20,7 @@ function App() {
     const handleInput = (ev) => {
       
     const inputId = ev.target.id;
+
      
      if (inputId === "name") {
      setName(ev.target.value)
@@ -102,6 +103,7 @@ function App() {
               id="name"
               onChange={handleInput}
               value={name}
+              required
             />
             <input
               className="input"
@@ -111,6 +113,8 @@ function App() {
               placeholder="Slogan"
               onChange={handleInput}
               value={slogan}
+              required
+              
               
             />
             <input
@@ -121,6 +125,7 @@ function App() {
               placeholder="Repo"
               onChange={handleInput}
               value={repo}
+              required
             />
             <input
               className="input"
@@ -130,6 +135,7 @@ function App() {
               id="demo"
               onChange={handleInput}
               value={demo}
+              required
             />
             <input
               className="input"
@@ -139,6 +145,7 @@ function App() {
               id="technologies"
               onChange={handleInput}
               value={technologies}
+              required
             />
             <textarea
               className="textarea"
@@ -148,6 +155,7 @@ function App() {
               id="desc"
               onChange={handleInput}
               value={desc}
+              required
             ></textarea>
           </fieldset>
 
@@ -165,6 +173,7 @@ function App() {
               id="autor"
               onChange={handleInput}
               value={autor}
+              required
             />
             <input
               className="input"
@@ -174,6 +183,7 @@ function App() {
               id="job"
               onChange={handleInput}
               value={job}
+              required
             />
           </fieldset>
 
