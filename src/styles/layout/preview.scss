@@ -1,9 +1,12 @@
 
 .preview{
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3.06rem;
   &__img{
-    width: 32rem;
-    padding: 2rem;
+    width: 32.9rem;
+    height: 30.7rem;
   }
 
   &__autor{

@@ -3,7 +3,7 @@ import {useState} from 'react';
 // import reactLogo from '../images/react.svg'
 import '../styles/App.scss'
 
-import cover from '../images/cover.jpeg'
+import cover from '../images/covercut.jpg'
 
 import logo from '../images/logo-adalab.png'
 import user from '../images/user.jpeg'
