@@ -4,6 +4,8 @@ import {useState} from 'react';
 import '../styles/App.scss'
 
 import cover from '../images/cover.jpeg'
+
+import logo from '../images/logo-adalab.png'
 import user from '../images/user.jpeg'
 
 function App() {
@@ -53,11 +55,29 @@ function App() {
     <>
       <div className="container">
       <header className="header">
-        <p className="text">Proyectos Molones</p>
+        <a className="header__icon" href="#"><i className="header__icon--laptop fa-solid fa-laptop-code"></i></a>
+
+        <p className="header__text">Proyectos Molones</p>
+
+        <a className='header__logo' href="https://adalab.es/"><img className='header__logo--img' src={logo} alt="Logo Adalab" /></a>
+
       </header>
+
       <main className="main">
+
+        <section className='hero'>
+          <h1 className='hero__title'>Proyectos Molones</h1>
+          <p className='hero__text'>Escaparate en línea para recoger ideas a través de la tecnología</p>
+          <button className='hero__button'>Ver proyectos</button>
+
+        </section>
+
+
+
         <section className="preview">
-          <img className="image" src={cover} alt="" />
+
+          <img className="image-principal" src={cover} alt="" />
+          
 
           <section className="autor">
             <section className="info-project">

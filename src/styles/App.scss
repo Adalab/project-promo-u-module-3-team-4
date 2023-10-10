@@ -9,6 +9,13 @@ html {
   font-size: 62.5%;
 }
 
+@import 'layout/header.scss';
+@import 'layout/hero.scss';
+@import 'layout/main.scss';
+
+.container {
+  background-color: #302c42;
+}
 // .container {
 //   background-color: #302c42;
 //   height: 100vh;
@@ -125,105 +132,105 @@ html {
 //   height: 80%;
 // }
 
-// .main .preview .autor {
-//   background-color: white;
-//   color: #3e3e3e;
-//   width: 90%;
-//   height: 50%;
-//   transform: translateY(-10rem);
-//   margin: auto;
-//   border-radius: 2rem;
-//   display: flex;
-//   flex-direction: row-reverse;
-//   gap: 4rem;
-//   padding: 3rem;
-//   overflow-y: scroll;
-// }
+.main .preview .autor {
+  background-color: white;
+  color: #3e3e3e;
+  width: 90%;
+  height: 50%;
+  transform: translateY(-10rem);
+  margin: auto;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 4rem;
+  padding: 3rem;
+  overflow-y: scroll;
+}
 
-// .info-autor {
-//   width: 40%;
-//   text-align: center;
-// }
+.info-autor {
+  width: 40%;
+  text-align: center;
+}
 
-// .info-autor .image {
-//   border-radius: 50%;
-//   width: 8rem;
-//   height: 11rem;
-// }
+.info-autor .image {
+  border-radius: 50%;
+  width: 8rem;
+  height: 11rem;
+}
 
-// .info-autor .job {
-//   font-weight: bold;
-//   color: black;
-//   font-size: 1.4rem;
-// }
+.info-autor .job {
+  font-weight: bold;
+  color: black;
+  font-size: 1.4rem;
+}
 
-// .info-autor .name {
-//   font-size: 1.6rem;
-// }
+.info-autor .name {
+  font-size: 1.6rem;
+}
 
-// .info-project {
-//   width: 60%;
-// }
+.info-project {
+  width: 60%;
+}
 
-// .info-project .subtitle {
-//   font-size: 1.4rem;
-//   text-align: center;
-// }
-// .info-project .title {
-//   font-size: 2rem;
-//   color: black;
-//   margin-bottom: 1rem;
-// }
+.info-project .subtitle {
+  font-size: 1.4rem;
+  text-align: center;
+}
+.info-project .title {
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 1rem;
+}
 
-// .info-project .desc {
-//   font-size: 1.2rem;
-//   margin-bottom: 1rem;
-// }
+.info-project .desc {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
 
-// .info-project .slogan {
-//   font-size: 1.4rem;
-//   margin-bottom: 1rem;
-// }
+.info-project .slogan {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
 
-// .info-project .line {
-//   width: 100%;
-//   border: 0;
-//   height: 0.1rem;
+.info-project .line {
+  width: 100%;
+  border: 0;
+  height: 0.1rem;
 
-//   background-image: linear-gradient(
-//     to right,
-//     rgba(255, 255, 255, 0),
-//     rgba(1, 1, 1, 0.75),
-//     rgba(255, 255, 255, 0)
-//   );
-// }
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(1, 1, 1, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+}
 
-// .btn-color {
-//   border-radius: 2rem;
-//   width: 8.5rem;
-//   height: 3rem;
-//   font-weight: bold;
-// }
+.btn-color {
+  border-radius: 2rem;
+  width: 8.5rem;
+  height: 3rem;
+  font-weight: bold;
+}
 
-// .btn-color-dark {
-//   background-color: black;
-//   color: white;
-// }
+.btn-color-dark {
+  background-color: black;
+  color: white;
+}
 
-// .technologies {
-//   background-color: lightgray;
-//   border-radius: 2rem;
-//   font-size: 1.4rem;
-//   padding: 1rem;
-//   width: 70%;
-// }
+.technologies {
+  background-color: lightgray;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+  padding: 1rem;
+  width: 70%;
+}
 
-// .card {
-//   color: white;
-//   text-align: center;
-//   padding: 2rem;
-// }
+.card {
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
 
-// .hidden {
-//   display: none;
-// }
+.hidden {
+  display: none;
+}
