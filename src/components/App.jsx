@@ -6,7 +6,7 @@ import '../styles/App.scss'
 import cover from '../images/covercut.jpg'
 
 import logo from '../images/logo-adalab.png'
-import user from '../images/user.jpeg'
+import user from '../images/userwoman.jpg'
 
 function App() {
   const [name, setName] = useState ("");
@@ -73,20 +73,21 @@ function App() {
           
           <section className="preview__autor">
             <section className="preview__autor__infoProject">
-              <p className="preview__autor__infoProject--subtitle">Personal Project Card</p>
-              <hr className="preview__autor__infoProject--line" />
-
+              <div className='preview__autor__infoProject--div'>
+                <hr className="preview__autor__infoProject--div--line1" />
+                <p className="preview__autor__infoProject--div--subtitle">Personal Project Card</p>
+                <hr className="preview__autor__infoProject--div--line2" />
+              </div>
               <h2 className="preview__autor__infoProject--title">{name || 'Elegant Workspace'}</h2>
               <p className="preview__autor__infoProject--slogan">{slogan || 'Diseños Exclusivos'}</p>
-              <p className="preview__autor__infoProject--desc">{desc|| 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus?'}
+              <p className="preview__autor__infoProject--desc" style={{ whiteSpace: "pre-line" }}>{desc|| 'Product Description \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet faucibus commodo tellus lectus lobortis.'}
               </p>
-              <section className="preview__autor__infoProject--technologies">
-                <p className="text">{technologies ||'React JS, MongoDB'}</p>
-              </section>
-              <section className= "preview__autor__infoProject--icons">
-                <a href={demo || '#'}target="_blank" rel="noreferrer"><i className="fa-solid fa-globe"></i></a>
-                <a href={repo || '#'}target="_blank" rel="noreferrer"><i className="fa-brands fa-github"></i></a>
-
+              <section className="preview__autor__infoProject--tecIcon">
+                <p className="preview__autor__infoProject--tecIcon--technologies">{technologies ||'React JS - HTML- CSS'}</p>
+                <div className='preview__autor__infoProject--tecIcon--div'>
+                  <a href={demo || '#'}target="_blank" rel="noreferrer" className='preview__autor__infoProject--tecIcon--div--icon'><i className="fa-solid fa-globe"></i></a>
+                  <a href={repo || '#'}target="_blank" rel="noreferrer" className='preview__autor__infoProject--tecIcon--div--icon'><i className="fa-brands fa-github"></i></a>
+                </div>
               </section>
             </section>
 
