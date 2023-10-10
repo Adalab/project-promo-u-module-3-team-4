@@ -39,8 +39,13 @@ function App() {
     }else if(inputId==="autor"){
       setAutor(ev.target.value)
     }
+
+
+  };
+
+
   
-  }
+  
  
 //html
   return (
@@ -60,16 +65,14 @@ function App() {
 
               <h2 className="title">{name || 'Elegant Workspace'}</h2>
               <p className="slogan">{slogan || 'Diseños Exclusivos'}</p>
-              <p className="desc">{desc|| `Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipit
-                harum laboriosam saepe earum doloribus aperiam, ullam culpa
-                accusantium placeat odit corrupti ipsum!`}
+              <p className="desc">{desc|| 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus aperiam, ullam culpa accusantium placeat odit corrupti ipsum!'}
               </p>
               <section className="technologies">
                 <p className="text">{technologies ||'React JS, MongoDB'}</p>
               </section>
               <section className= "icons">
-                <a href={demo || '#'}target="_blank"><i class="fa-solid fa-globe"></i></a>
-                <a href={repo || '#'}target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href={demo || '#'}target="_blank"><i className="fa-solid fa-globe"></i></a>
+                <a href={repo || '#'}target="_blank"><i className="fa-brands fa-github"></i></a>
 
               </section>
             </section>
@@ -98,6 +101,7 @@ function App() {
               name="name"
               id="name"
               onChange={handleInput}
+              value={name}
             />
             <input
               className="input"
@@ -106,6 +110,8 @@ function App() {
               id="slogan"
               placeholder="Slogan"
               onChange={handleInput}
+              value={slogan}
+              
             />
             <input
               className="input"
@@ -114,6 +120,7 @@ function App() {
               id="repo"
               placeholder="Repo"
               onChange={handleInput}
+              value={repo}
             />
             <input
               className="input"
@@ -122,6 +129,7 @@ function App() {
               name="demo"
               id="demo"
               onChange={handleInput}
+              value={demo}
             />
             <input
               className="input"
@@ -130,6 +138,7 @@ function App() {
               name="technologies"
               id="technologies"
               onChange={handleInput}
+              value={technologies}
             />
             <textarea
               className="textarea"
@@ -138,6 +147,7 @@ function App() {
               name="desc"
               id="desc"
               onChange={handleInput}
+              value={desc}
             ></textarea>
           </fieldset>
 
@@ -154,6 +164,7 @@ function App() {
               name="autor"
               id="autor"
               onChange={handleInput}
+              value={autor}
             />
             <input
               className="input"
@@ -162,6 +173,7 @@ function App() {
               name="job"
               id="job"
               onChange={handleInput}
+              value={job}
             />
           </fieldset>
 
@@ -170,7 +182,7 @@ function App() {
             <button className="btn">Subir foto de autora</button>
           </section>
           <section className="buttons-img">
-            <button className="btn-large" onClick="{handleClickCreateCard}">
+            <button className="btn-large">
               Crear Tarjeta
             </button>
           </section>
@@ -183,7 +195,7 @@ function App() {
       </main>
     </div>
     </>
-  )
+  );
 }
 
 export default App
