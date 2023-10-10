@@ -1,36 +1,42 @@
 .hero {
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.8rem;
-  padding: 3.6rem;
-
+  padding-inline: 3.6rem;
+    @media (min-width: 768px){
+      padding-inline: 10rem;
+      gap: 1rem;
+    }
   &__title {
-    font-size: 2rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    @include textStyle($montserrat, $bold, 2rem, $white);
+    @media (min-width: 768px){
+      font-size: 4rem;
+    }
   }
 
   &__text {
-    font-size: 1.2rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
+    @include textStyle($montserrat, $light, 1.2rem, $white);
     text-align: center;
+    @media (min-width: 768px){
+      font-size: 1.8rem;
+    }
   }
 
   &__button {
+    @include textStyle($roboto, $bold, 1rem, $white);
     border-radius: 2rem;
-    font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-
     text-transform: uppercase;
     width: 11.64rem;
     height: 2.19rem;
     background-color: #8176af;
     border: none;
-    color: white;
+    @media (min-width: 768px){
+      width: 15.4rem;
+      height: 2.9rem;
+      font-size: 1.5rem;
+    }
+    
   }
 }

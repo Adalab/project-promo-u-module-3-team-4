@@ -23,17 +23,15 @@ function App() {
       
     const inputId = ev.target.id;
 
-     
-     if (inputId === "name") {
-     setName(ev.target.value)
-     
-     } else if (inputId==="slogan"){
+    if (inputId === "name") {
+    setName(ev.target.value)
+    } else if (inputId==="slogan"){
     setSlogan(ev.target.value)
-     }else if (inputId==="repo"){
+    }else if (inputId==="repo"){
       setRepo(ev.target.value)
-     }else if (inputId==="demo"){
+    }else if (inputId==="demo"){
       setDemo(ev.target.value)
-     } else if (inputId==="desc"){
+    } else if (inputId==="desc"){
       setDesc(ev.target.value)
     }else if (inputId==="technologies"){
       setTechnologies(ev.target.value)
@@ -45,19 +43,16 @@ function App() {
 
 
   };
-
-
-  
-  
- 
 //html
   return (
     <>
       <div className="container">
       <header className="header">
-        <a className="header__icon" href="#"><i className="header__icon--laptop fa-solid fa-laptop-code"></i></a>
+        <div className='header__div'>
+        <a className="header__div--icon" href="#"><i className="header__div--icon--laptop fa-solid fa-laptop-code"></i></a>
 
-        <p className="header__text">Proyectos Molones</p>
+        <p className="header__div--text">Proyectos Molones</p>
+        </div>
 
         <a className='header__logo' href="https://adalab.es/"><img className='header__logo--img' src={logo} alt="Logo Adalab" /></a>
 
@@ -72,36 +67,33 @@ function App() {
 
         </section>
 
-
-
         <section className="preview">
 
-          <img className="image-principal" src={cover} alt="" />
+          <img className="preview__img" src={cover} alt="" />
           
+          <section className="preview__autor">
+            <section className="preview__autor__infoProject">
+              <p className="preview__autor__infoProject--subtitle">Personal Project Card</p>
+              <hr className="preview__autor__infoProject--line" />
 
-          <section className="autor">
-            <section className="info-project">
-              <p className="subtitle">Personal Project Card</p>
-              <hr className="line" />
-
-              <h2 className="title">{name || 'Elegant Workspace'}</h2>
-              <p className="slogan">{slogan || 'Diseños Exclusivos'}</p>
-              <p className="desc">{desc|| 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus? Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus aperiam, ullam culpa accusantium placeat odit corrupti ipsum!'}
+              <h2 className="preview__autor__infoProject--title">{name || 'Elegant Workspace'}</h2>
+              <p className="preview__autor__infoProject--slogan">{slogan || 'Diseños Exclusivos'}</p>
+              <p className="preview__autor__infoProject--desc">{desc|| 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.Libero, delectus?'}
               </p>
-              <section className="technologies">
+              <section className="preview__autor__infoProject--technologies">
                 <p className="text">{technologies ||'React JS, MongoDB'}</p>
               </section>
-              <section className= "icons">
-                <a href={demo || '#'}target="_blank"><i className="fa-solid fa-globe"></i></a>
-                <a href={repo || '#'}target="_blank"><i className="fa-brands fa-github"></i></a>
+              <section className= "preview__autor__infoProject--icons">
+                <a href={demo || '#'}target="_blank" rel="noreferrer"><i className="fa-solid fa-globe"></i></a>
+                <a href={repo || '#'}target="_blank" rel="noreferrer"><i className="fa-brands fa-github"></i></a>
 
               </section>
             </section>
 
-            <section className="info-autor">
-              <img className="image" src={user} alt="" />
-              <p className="job">{job || 'Full Stack Developer'}</p>
-              <p className="autor">{autor || 'Emmelie Björklund'}</p>
+            <section className="preview__autor__infoAutor">
+              <img className="preview__autor__infoAutor--image" src={user} alt="" />
+              <p className="preview__autor__infoAutor--job">{job || 'Full Stack Developer'}</p>
+              <p className="preview__autor__infoAutor--autor">{autor || 'Emmelie Björklund'}</p>
             </section>
           </section>
         </section>

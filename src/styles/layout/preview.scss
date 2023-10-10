@@ -1,0 +1,61 @@
+
+.preview{
+
+  &__img{
+    width: 32rem;
+    padding: 2rem;
+  }
+
+  &__autor{
+    background-color: white;
+    color: #3e3e3e;
+    width: 30.2rem;
+    height: 21.4rem;
+    transform: translateY(-10rem);
+    margin: auto;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4rem;
+    padding: 3rem;
+    overflow-y: scroll;
+
+    &__infoProject{
+
+      &--subtitle{
+        @include textStyle($poppins, $light, 0.8rem, $dark);
+      }
+      &--line{
+        color: $dark;
+      }
+      &--title{
+        @include textStyle($poppins, $medium, 1.4rem, $black);
+      }
+      &--slogan{
+        @include textStyle($poppins, $medium, 1.2rem, $greyishBrownTwo);
+      }
+      &--desc{
+        @include textStyle($poppins, $regular, 0.8rem, $greyishBrown88);
+      }
+      &--technologies{
+        @include textStyle($catamaran, $medium, 1rem, $greyishBrown);
+      }
+      &--icons{
+        width: 1.18rem;
+      }
+
+    }
+    &__infoAutor {
+
+      &--image{
+        width: 7.05rem;
+      }
+      &--job{
+        @include textStyle($catamaran, $medium, 1rem, $warmGrey);
+      }
+      &--autor{
+        @include textStyle($catamaran, $bold, 1.4rem, $black80);
+      }
+    }
+  }
+}
