@@ -79,7 +79,7 @@ function App() {
 
             <section className="form__askInfo">
               <p className="form__askInfo--subtitle">Cuéntanos sobre el proyecto</p>
-              <hr className="form__askInfo--line" />
+              <div className="form__askInfo--line"></div>
             </section>
 
             <fieldset className="form__project">
@@ -177,23 +177,28 @@ function App() {
               />
             </fieldset>
 
-            <section className="buttons-img">
-              <button className="btn">Subir foto de proyecto</button>
-              <button className="btn">Subir foto de autora</button>
+            <section className="form__buttons">
+              <button className="form__buttons--btn">Subir foto de proyecto</button>
+              <button className="form__buttons--btn">Subir foto de autora</button>
             </section>
-            <section className="buttons-img">
-              <button className="btn-large">
-                Crear Tarjeta
+            <section className="form__button">
+              <button className="form__button--btnLarge">
+                Crear Proyecto
               </button>
             </section>
 
             <section className="card">
-              <span className=""> La tarjeta ha sido creada: </span>
+              <span className="hidden"> La tarjeta ha sido creada: </span>
               <a href="" className="" target="_blank" rel="noreferrer"> </a>
             </section>
           </section>
         </section>
       </main>
+      <footer className='footer'>
+        <a className='footer__logo' href="https://adalab.es/">
+          <img className='footer__logo--img' src={logo} alt="Logo Adalab" />
+        </a>
+      </footer>
     </div>
     </>
   );
