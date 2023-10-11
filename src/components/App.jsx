@@ -9,40 +9,15 @@ import logo from '../images/logo-adalab.png'
 import user from '../images/userwoman.jpg'
 
 function App() {
-  const [name, setName] = useState ("");
-  const [slogan, setSlogan] = useState ("");
-  const [repo, setRepo] = useState ("");
-  const [demo, setDemo] = useState ("");
-  const [desc, setDesc] = useState ("");
-  const [technologies, setTechnologies] = useState ("");
-  const [job, setJob] = useState ("");
-  const [autor, setAutor] = useState ("");
-  
-  
-    const handleInput = (ev) => {
-      
-    const inputId = ev.target.id;
+  const [data, setData] = useState({name:"", slogan:"", repo:"", demo:"", desc:"", technologies:"", job:"", autor:""});
 
-    if (inputId === "name") {
-    setName(ev.target.value)
-    } else if (inputId==="slogan"){
-    setSlogan(ev.target.value)
-    }else if (inputId==="repo"){
-      setRepo(ev.target.value)
-    }else if (inputId==="demo"){
-      setDemo(ev.target.value)
-    } else if (inputId==="desc"){
-      setDesc(ev.target.value)
-    }else if (inputId==="technologies"){
-      setTechnologies(ev.target.value)
-    }else if (inputId==="job"){
-      setJob(ev.target.value)
-    }else if(inputId==="autor"){
-      setAutor(ev.target.value)
-    }
+  const handleInput = (ev) => {
+    const id = ev.target.id;
+    const value = ev.target.value;
 
-
+    setData({...data, [id] : value})
   };
+  
 //html
   return (
     <>
@@ -78,23 +53,23 @@ function App() {
                   <p className="preview__autor__infoProject--div--subtitle">Personal Project Card</p>
                   <hr className="preview__autor__infoProject--div--line2" />
                 </div>
-                <h2 className="preview__autor__infoProject--title">{name || 'Elegant Workspace'}</h2>
-                <p className="preview__autor__infoProject--slogan">{slogan || 'Diseños Exclusivos'}</p>
-                <p className="preview__autor__infoProject--desc" style={{ whiteSpace: "pre-line" }}>{desc|| 'Product Description \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet faucibus commodo tellus lectus lobortis.'}
+                <h2 className="preview__autor__infoProject--title">{data.name || 'Elegant Workspace'}</h2>
+                <p className="preview__autor__infoProject--slogan">{data.slogan || 'Diseños Exclusivos'}</p>
+                <p className="preview__autor__infoProject--desc" style={{ whiteSpace: "pre-line" }}>{data.desc|| 'Product Description \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet faucibus commodo tellus lectus lobortis.'}
                 </p>
                 <section className="preview__autor__infoProject--tecIcon">
-                  <p className="preview__autor__infoProject--tecIcon--technologies">{technologies ||'React JS - HTML- CSS'}</p>
+                  <p className="preview__autor__infoProject--tecIcon--technologies">{data.technologies ||'React JS - HTML- CSS'}</p>
                   <div className='preview__autor__infoProject--tecIcon--div'>
-                    <a href={demo || '#'}target="_blank" rel="noreferrer" className='preview__autor__infoProject--tecIcon--div--icon'><i className="fa-solid fa-globe"></i></a>
-                    <a href={repo || '#'}target="_blank" rel="noreferrer" className='preview__autor__infoProject--tecIcon--div--icon'><i className="fa-brands fa-github"></i></a>
+                    <a href={data.demo || '#'}target="_blank" rel="noreferrer" className='preview__autor__infoProject--tecIcon--div--icon'><i className="fa-solid fa-globe"></i></a>
+                    <a href={data.repo || '#'}target="_blank" rel="noreferrer" className='preview__autor__infoProject--tecIcon--div--icon'><i className="fa-brands fa-github"></i></a>
                   </div>
                 </section>
               </section>
 
               <section className="preview__autor__infoAutor">
                 <img className="preview__autor__infoAutor--image" src={user} alt="" />
-                <p className="preview__autor__infoAutor--job">{job || 'Full Stack Developer'}</p>
-                <p className="preview__autor__infoAutor--autor">{autor || 'Emmelie Björklund'}</p>
+                <p className="preview__autor__infoAutor--job">{data.job || 'Full Stack Developer'}</p>
+                <p className="preview__autor__infoAutor--autor">{data.autor || 'Emmelie Björklund'}</p>
               </section>
             </section>
           </section>
@@ -115,7 +90,7 @@ function App() {
                 name="name"
                 id="name"
                 onChange={handleInput}
-                value={name}
+                value={data.name}
                 required
               />
               <input
@@ -125,7 +100,7 @@ function App() {
                 id="slogan"
                 placeholder="Slogan"
                 onChange={handleInput}
-                value={slogan}
+                value={data.slogan}
                 required
                 
                 
@@ -137,7 +112,7 @@ function App() {
                 id="repo"
                 placeholder="Repo"
                 onChange={handleInput}
-                value={repo}
+                value={data.repo}
                 required
               />
               <input
@@ -147,7 +122,7 @@ function App() {
                 name="demo"
                 id="demo"
                 onChange={handleInput}
-                value={demo}
+                value={data.demo}
                 required
               />
               <input
@@ -157,7 +132,7 @@ function App() {
                 name="technologies"
                 id="technologies"
                 onChange={handleInput}
-                value={technologies}
+                value={data.technologies}
                 required
               />
               <textarea
@@ -167,7 +142,7 @@ function App() {
                 name="desc"
                 id="desc"
                 onChange={handleInput}
-                value={desc}
+                value={data.desc}
                 required
               ></textarea>
             </fieldset>
@@ -185,7 +160,7 @@ function App() {
                 name="autor"
                 id="autor"
                 onChange={handleInput}
-                value={autor}
+                value={data.autor}
                 required
               />
               <input
@@ -195,7 +170,7 @@ function App() {
                 name="job"
                 id="job"
                 onChange={handleInput}
-                value={job}
+                value={data.job}
                 required
               />
             </fieldset>
