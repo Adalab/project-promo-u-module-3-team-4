@@ -75,16 +75,16 @@ function App() {
           </section>
 
             <section className="form">
-            <h2 className="title">Información</h2>
+            <h2 className="form__title">Información</h2>
 
-            <section className="ask-info">
-              <p className="subtitle">Cuéntanos sobre el proyecto</p>
-              <hr className="line" />
+            <section className="form__askInfo">
+              <p className="form__askInfo--subtitle">Cuéntanos sobre el proyecto</p>
+              <hr className="form__askInfo--line" />
             </section>
 
-            <fieldset className="project">
+            <fieldset className="form__project">
               <input 
-                className="input"
+                className="form__project--input"
                 type="text"
                 placeholder="Nombre del proyecto"
                 name="name"
@@ -94,7 +94,7 @@ function App() {
                 required
               />
               <input
-                className="input"
+                className="form__project--input"
                 type="text"
                 name="slogan"
                 id="slogan"
@@ -105,28 +105,30 @@ function App() {
                 
                 
               />
+              <div className='juntos'>
+                  <input
+                    className="form__project--input"
+                    type="text"
+                    name="repo"
+                    id="repo"
+                    placeholder="Repo"
+                    onChange={handleInput}
+                    value={data.repo}
+                    required
+                  />
+                  <input
+                    className="form__project--input"
+                    type="text"
+                    placeholder="Demo"
+                    name="demo"
+                    id="demo"
+                    onChange={handleInput}
+                    value={data.demo}
+                    required
+                  />
+              </div>
               <input
-                className="input"
-                type="text"
-                name="repo"
-                id="repo"
-                placeholder="Repo"
-                onChange={handleInput}
-                value={data.repo}
-                required
-              />
-              <input
-                className="input"
-                type="text"
-                placeholder="Demo"
-                name="demo"
-                id="demo"
-                onChange={handleInput}
-                value={data.demo}
-                required
-              />
-              <input
-                className="input"
+                className="form__project--input"
                 type="text"
                 placeholder="Tecnologías"
                 name="technologies"
@@ -136,7 +138,7 @@ function App() {
                 required
               />
               <textarea
-                className="textarea"
+                className="form__project--textarea"
                 type="text"
                 placeholder="Descripción"
                 name="desc"
@@ -147,14 +149,14 @@ function App() {
               ></textarea>
             </fieldset>
 
-            <section className="ask-info">
-              <p className="subtitle">Cuéntanos sobre la autora</p>
-              <hr className="line" />
+            <section className="form__autorInfo">
+              <p className="form__autorInfo--subtitle">Cuéntanos sobre la autora</p>
+              <hr className="form__autorInfo--line" />
             </section>
 
-            <fieldset className="autor">
+            <fieldset className="form__autor">
               <input
-                className="input"
+                className="form__autor--input"
                 type="text"
                 placeholder="Nombre"
                 name="autor"
@@ -164,7 +166,7 @@ function App() {
                 required
               />
               <input
-                className="input"
+                className="form__autor--input"
                 type="text"
                 placeholder="Trabajo"
                 name="job"
