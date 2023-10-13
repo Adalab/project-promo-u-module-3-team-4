@@ -12,6 +12,9 @@ import user from '../images/userwoman.jpg'
 
 function App() {
   const [data, setData] = useState({name:"", slogan:"", repo:"", demo:"", desc:"", technologies:"", job:"", autor:""});
+
+  const [previewUrl, setPreviewUrl] = useState('');
+
   useEffect(() => {
     // Hacer la solicitud usando Fetch
     fetch('https://dev.adalab.es/api/projectCard')
@@ -19,8 +22,8 @@ function App() {
       .then(data => {
         // Supongamos que la URL de la tarjeta de previsualización está en la propiedad 'previewUrl' de la respuesta
         const previewUrl = data.previewUrl;
-        // Guardar la URL de la tarjeta de previsualización en el local storage
-        storage.get('previewUrl', previewUrl);
+        setPreviewUrl(previewUrl);
+        storage.set('previewUrl', previewUrl);
       })
       //.catch(error => console.error('Error fetching data:', error));
   }, []); 
@@ -202,8 +205,8 @@ function App() {
 
             <section className="card">
             <span className="hidden">La tarjeta ha sido creada:</span>
-            <a href={localStorage.getItem('previewUrl')} target="_blank" rel="noreferrer">
-      
+            <a className="hidden" href={previewUrl} target="_blank" rel="noreferrer">
+            Tarjeta de previsualización
             </a>
             </section>
           </section>
