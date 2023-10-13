@@ -4,13 +4,22 @@ const callToApi = (data) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
   })
-    .then((response) => response.json())
-    .then((result) => {
-      console.log(result);
-      if (result.success) {
-        console.log(result);
-        return result.cardURL;
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
+      return response.json();
+    })
+    .then((result) => {
+      if (result.success) {
+        return result.cardURL;
+      } else {
+        throw new Error(result.error);
+      }
+    })
+    .catch((error) => {
+      console.error('Error calling API:', error);
+      throw error;
     });
 };
 

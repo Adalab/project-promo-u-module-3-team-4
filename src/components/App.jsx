@@ -8,11 +8,8 @@ import logo from '../images/logo-adalab.png'
 import user from '../images/userwoman.jpg'
 
 function App() {
-  const [data, setData] = useState({name:"", slogan:"", repo:"", demo:"", desc:"", technologies:"", job:"", autor:"", photo: 'https://images.pexels.com/photos/2361952/pexels-photo-2361952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', image:'https://images.pexels.com/photos/2361952/pexels-photo-2361952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'});
+  const [data, setData] = useState({name:"", slogan:"", repo:"", demo:"", desc:"", technologies:"", job:"", autor:"", image:'https://images.pexels.com/photos/2361952/pexels-photo-2361952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', photo:'https://images.pexels.com/photos/2361952/pexels-photo-2361952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'});
 
-  //photo:'https://images.pexels.com/photos/2361952/pexels-photo-2361952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-
-  //image: 'https://images.pexels.com/photos/11551694/pexels-photo-11551694.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 
   const [errorName, setErrorName] = useState('');
   const [errorSlogan, setErrorSlogan] = useState('');
@@ -121,7 +118,7 @@ function App() {
         <section className='section'>
           <section className="preview">
 
-            <img className="preview__img" src={cover} alt="" />
+            <img className="preview__img" src={cover || data.photo} alt="" />
             
             <section className="preview__autor">
               <section className="preview__autor__infoProject">
@@ -280,7 +277,6 @@ function App() {
                 <>
                   <span>{successMessage} {previewUrl}</span>
                   <a href={previewUrl} target="_blank" rel="noreferrer">
-                    Ver tarjeta
                   </a>
                 </>
               )}
