@@ -1,37 +1,98 @@
-//imports dependencias, imagenes, componentes, stylos
-import React, { useState, useEffect } from 'react';
-import storage from "../services/localStorage";
-
-// import reactLogo from '../images/react.svg'
+import { useState, useEffect } from 'react';
+// import storage from "../services/localStorage";
+import callToApi from '../services/api';
 import '../styles/App.scss'
 
 import cover from '../images/covercut.jpg'
-
 import logo from '../images/logo-adalab.png'
 import user from '../images/userwoman.jpg'
 
 function App() {
-  const [data, setData] = useState({name:"", slogan:"", repo:"", demo:"", desc:"", technologies:"", job:"", autor:""});
+  const [data, setData] = useState({name:"", slogan:"", repo:"", demo:"", desc:"", technologies:"", job:"", autor:"", photo: 'https://images.pexels.com/photos/2361952/pexels-photo-2361952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', image:'https://images.pexels.com/photos/2361952/pexels-photo-2361952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'});
 
+  //photo:'https://images.pexels.com/photos/2361952/pexels-photo-2361952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+
+  //image: 'https://images.pexels.com/photos/11551694/pexels-photo-11551694.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+
+  const [errorName, setErrorName] = useState('');
+  const [errorSlogan, setErrorSlogan] = useState('');
+  const [errorDesc, setErrorDesc] = useState('');
+  const [errorTechnologies, setErrorTechnologies] = useState('');
+  const [errorJob, setErrorJob] = useState('');
+  const [errorAutor, setErrorAutor] = useState('');
   const [previewUrl, setPreviewUrl] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  useEffect(() => {
-    // Hacer la solicitud usando Fetch
-    fetch('https://dev.adalab.es/api/projectCard')
-      .then(response => response.json())
-      .then(data => {
-        // Supongamos que la URL de la tarjeta de previsualización está en la propiedad 'previewUrl' de la respuesta
-        const previewUrl = data.previewUrl;
-        setPreviewUrl(previewUrl);
-        storage.set('previewUrl', previewUrl);
-      })
-      //.catch(error => console.error('Error fetching data:', error));
-  }, []); 
+
+
   const handleInput = (ev) => {
     const id = ev.target.id;
     const value = ev.target.value;
 
     setData({...data, [id] : value})
+  };
+
+  const handleCreateProject = () => {
+
+    let hasError = false;
+
+
+    if (data.name === '') {
+      setErrorName('Campo Obligatorio');
+      hasError = true;
+    } else {
+      setErrorName('');
+    }
+
+    if (data.slogan === '') {
+      setErrorSlogan('Campo Obligatorio');
+      hasError = true;
+    } else {
+      setErrorSlogan('');
+    }
+    if (data.technologies === '') {
+      setErrorTechnologies('Campo Obligatorio');
+      hasError = true;
+    } else {
+      setErrorTechnologies ('');
+    }
+    if (data.desc === '') {
+      setErrorDesc('Campo Obligatorio');
+      hasError = true;
+    } else {
+      setErrorDesc ('');
+    }
+    if (data.autor === '') {
+      setErrorAutor('Campo Obligatorio');
+      hasError = true;
+    } else {
+      setErrorAutor ('');
+    }
+    if (data.job === '') {
+      setErrorJob('Campo Obligatorio');
+      hasError = true;
+    } else {
+      setErrorJob ('');
+    }
+
+    if (!hasError) {
+      callToApi(data)
+        .then((response) => {
+          setPreviewUrl(response);
+          setSuccessMessage('La tarjeta ha sido creada:');
+          setErrorMessage('');
+        })
+        .catch((error) => {
+          setErrorMessage('Error al crear la tarjeta.');
+          setSuccessMessage('');
+        });
+    } else {
+      setPreviewUrl('');
+      setSuccessMessage('');
+      setErrorMessage('');
+    }
+    
   };
   
 //html
@@ -102,25 +163,25 @@ function App() {
               <input 
                 className="form__project--input"
                 type="text"
-                placeholder="Nombre del proyecto"
+                placeholder="Nombre del proyecto *"
                 name="name"
                 id="name"
                 onChange={handleInput}
                 value={data.name}
                 required
               />
+              <p className='errorMessage'>{errorName}</p>
               <input
                 className="form__project--input"
                 type="text"
                 name="slogan"
                 id="slogan"
-                placeholder="Slogan"
+                placeholder="Slogan *"
                 onChange={handleInput}
                 value={data.slogan}
                 required
-                
-                
               />
+              <p className='errorMessage'>{errorSlogan}</p>
               <div className='juntos'>
                   <input
                     className="form__project--input"
@@ -146,23 +207,25 @@ function App() {
               <input
                 className="form__project--input"
                 type="text"
-                placeholder="Tecnologías"
+                placeholder="Tecnologías *"
                 name="technologies"
                 id="technologies"
                 onChange={handleInput}
                 value={data.technologies}
                 required
               />
+              <p className='errorMessage'>{errorTechnologies}</p>
               <textarea
                 className="form__project--textarea"
                 type="text"
-                placeholder="Descripción"
+                placeholder="Descripción *"
                 name="desc"
                 id="desc"
                 onChange={handleInput}
                 value={data.desc}
                 required
               ></textarea>
+              <p className='errorMessage'>{errorDesc}</p>
             </fieldset>
 
             <section className="form__autorInfo">
@@ -174,23 +237,25 @@ function App() {
               <input
                 className="form__autor--input"
                 type="text"
-                placeholder="Nombre"
+                placeholder="Nombre *"
                 name="autor"
                 id="autor"
                 onChange={handleInput}
                 value={data.autor}
                 required
               />
+              <p className='errorMessage'>{errorAutor}</p>
               <input
                 className="form__autor--input"
                 type="text"
-                placeholder="Trabajo"
+                placeholder="Trabajo *"
                 name="job"
                 id="job"
                 onChange={handleInput}
                 value={data.job}
                 required
               />
+              <p className='errorMessage'>{errorJob}</p>
             </fieldset>
 
             <section className="form__buttons">
@@ -198,17 +263,33 @@ function App() {
               <button className="form__buttons--btn">Subir foto de autora</button>
             </section>
             <section className="form__button">
-              <button className="form__button--btnLarge">
+              <button className="form__button--btnLarge" onClick={handleCreateProject}>
                 Crear Proyecto
               </button>
             </section>
 
+
+
+            {/* <section className="card hidden">
+            <span>La tarjeta ha sido creada:{previewUrl} </span>
+            <a  href={previewUrl} target="_blank" rel="noreferrer"></a>
+            </section> */}
+
             <section className="card">
-            <span className="hidden">La tarjeta ha sido creada:</span>
-            <a className="hidden" href={previewUrl} target="_blank" rel="noreferrer">
-            Tarjeta de previsualización
-            </a>
+              {successMessage && (
+                <>
+                  <span>{successMessage} {previewUrl}</span>
+                  <a href={previewUrl} target="_blank" rel="noreferrer">
+                    Ver tarjeta
+                  </a>
+                </>
+              )}
+              {errorMessage && <span className="errorMessage">{errorMessage}</span>}
             </section>
+
+
+
+
           </section>
         </section>
       </main>
