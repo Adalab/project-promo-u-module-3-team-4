@@ -1,5 +1,7 @@
 //imports dependencias, imagenes, componentes, stylos
-import {useState} from 'react';
+import React, { useState, useEffect } from 'react';
+import storage from "../services/localStorage";
+
 // import reactLogo from '../images/react.svg'
 import '../styles/App.scss'
 
@@ -10,7 +12,18 @@ import user from '../images/userwoman.jpg'
 
 function App() {
   const [data, setData] = useState({name:"", slogan:"", repo:"", demo:"", desc:"", technologies:"", job:"", autor:""});
-
+  useEffect(() => {
+    // Hacer la solicitud usando Fetch
+    fetch('https://dev.adalab.es/api/projectCard')
+      .then(response => response.json())
+      .then(data => {
+        // Supongamos que la URL de la tarjeta de previsualización está en la propiedad 'previewUrl' de la respuesta
+        const previewUrl = data.previewUrl;
+        // Guardar la URL de la tarjeta de previsualización en el local storage
+        storage.get('previewUrl', previewUrl);
+      })
+      //.catch(error => console.error('Error fetching data:', error));
+  }, []); 
   const handleInput = (ev) => {
     const id = ev.target.id;
     const value = ev.target.value;
@@ -188,8 +201,10 @@ function App() {
             </section>
 
             <section className="card">
-              <span className="hidden"> La tarjeta ha sido creada: </span>
-              <a href="" className="" target="_blank" rel="noreferrer"> </a>
+            <span className="hidden">La tarjeta ha sido creada:</span>
+            <a href={localStorage.getItem('previewUrl')} target="_blank" rel="noreferrer">
+      
+            </a>
             </section>
           </section>
         </section>
