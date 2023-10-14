@@ -11,7 +11,7 @@
         }
         @media (min-width: 1024px){
             width: 40%;
-            height: 77.3rem;
+            height: 79.3rem;
         }
     &__title{
         @include textStyle ($montserrat, $bold, 3rem, $white);
@@ -102,6 +102,12 @@
         }
 
     &__autorInfo{
+        @media (min-width: 768px){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            }
         &--subtitle{
         @include textStyle($montserrat,$light, 1.8rem, $white);
         text-align: center;
@@ -114,7 +120,15 @@
             display: none;
             background-image: linear-gradient(to left, #343045 100%, #c0b7e8 65%, $darkLilac 31%, #343045 0%);
             border: none;
-                    //la linea va en los media queries
+            @media (min-width: 768px){
+                display: flex;
+                background-image: linear-gradient(to left, #343045,  #c0b7e8, $darkLilac, #343045);
+                width: 9.68rem;
+                height: 0.1rem;
+                margin-bottom: 2rem;
+                border: none;
+            }
+            
         }
     }
 
@@ -149,7 +163,10 @@
         display: flex;
         justify-content: center;
         gap: 0.57rem;
-        padding-top: 4.3rem;
+        padding-top: 2.3rem;
+        @media (min-width: 768px){
+            padding-top: 1.5rem;
+        }
         &--btn{
             @include textStyle($montserrat, $bold, 1rem, $white);
             width: 12.12rem;
@@ -170,6 +187,7 @@
         display: flex;
         justify-content: center;
         padding-top: 1.74rem;
+
         &--btnLarge{
             @include textStyle($montserrat, $bold, 1rem, $white);
             width: 12.12rem;
