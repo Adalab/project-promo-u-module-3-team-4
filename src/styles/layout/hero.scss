@@ -8,6 +8,7 @@
     @media (min-width: 768px){
       padding-inline: 10rem;
       gap: 1rem;
+      padding-bottom: 2rem;
     }
   &__title {
     @include textStyle($montserrat, $bold, 2rem, $white);
