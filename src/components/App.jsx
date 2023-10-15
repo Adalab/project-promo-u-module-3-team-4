@@ -275,7 +275,7 @@ function App() {
             <section className="card">
               {successMessage && (
                 <>
-                  <span>{successMessage} {previewUrl}</span>
+                  <span className='linkMessage'>{successMessage} {previewUrl}</span>
                   <a href={previewUrl} target="_blank" rel="noreferrer">
                   </a>
                 </>

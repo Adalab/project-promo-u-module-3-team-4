@@ -204,3 +204,7 @@
         }
     }
 }
+
+.linkMessage{
+    @include textStyle($montserrat, $bold, 1rem, $white);
+}
