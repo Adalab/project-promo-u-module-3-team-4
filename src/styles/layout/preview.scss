@@ -3,115 +3,116 @@
   align-items: center;
   flex-direction: column;
   padding-inline: 4rem;
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     flex-direction: row;
     gap: 4.8rem;
     justify-content: space-evenly;
     align-items: flex-start;
   }
-  @media (min-width: 1024px){
+  @media (min-width: 1024px) {
     padding-top: 2rem;
   }
-
 }
-.preview{
+.preview {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 3.06rem;
-  @media (min-width: 330px){
+  @media (min-width: 330px) {
     width: 40%;
   }
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     width: 40%;
     padding-top: 0;
   }
-  &__img{
+  &__img {
     width: 30.94rem;
     height: 28.7rem;
     border-radius: 1rem;
-    @media (min-width: 330px){
+    @media (min-width: 330px) {
       width: 32.94rem;
       height: 30.7rem;
     }
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       width: 39.86rem;
       height: 41.33rem;
     }
-    @media (min-width: 1024px){
+    @media (min-width: 1024px) {
       width: 48.78rem;
-      height: 54.57rem
+      height: 54.57rem;
     }
   }
 
-  &__autor{
+  &__autor {
     background-color: white;
     color: #3e3e3e;
     width: 30.2rem;
-    height: 21.4rem;
+    // height: 21.4rem;
     transform: translateY(-5rem);
     border-radius: 2rem;
     display: flex;
     flex-direction: row-reverse;
-    @media (min-width: 768px){
+    padding-bottom: 2rem;
+    padding-right: 1rem;
+    @media (min-width: 768px) {
       width: 37.75rem;
-      height: 24.84rem;
+      // height: 24.84rem;
     }
-    @media (min-width: 1024px){
+    @media (min-width: 1024px) {
       width: 45.3rem;
-      height: 28.28rem;
+      // height: 28.28rem;
     }
-    &__infoProject{
+    &__infoProject {
       width: 17.11rem;
-      @media (min-width: 768px){
+      @media (min-width: 768px) {
         width: 23.89rem;
       }
       &--div {
         display: flex;
         align-items: center;
         padding-top: 2.24rem;
-        &--line1{
+        &--line1 {
           color: $dark;
           width: 3.42rem;
           border: 0;
           height: 0.2rem;
-          background-image: linear-gradient(to right,#ffffff00,#010101bf);
-          @media (min-width: 768px){
+          background-image: linear-gradient(to right, #ffffff00, #010101bf);
+          @media (min-width: 768px) {
             width: 4.78rem;
           }
         }
-        &--subtitle{
+        &--subtitle {
           @include textStyle($poppins, $light, 0.8rem, $dark);
-          @media (min-width: 768px){
+          @media (min-width: 768px) {
             font-size: 1rem;
           }
         }
-        &--line2{
+        &--line2 {
           color: $dark;
           width: 3.42rem;
           border: 0;
           height: 0.2rem;
-          background-image: linear-gradient(to right,#010101bf, #ffffff00);
-          @media (min-width: 768px){
+          background-image: linear-gradient(to right, #010101bf, #ffffff00);
+          @media (min-width: 768px) {
             width: 4.78rem;
           }
         }
       }
-      &--title{
+      &--title {
         @include textStyle($poppins, $medium, 1.4rem, $black);
         padding-top: 1.17rem;
-          @media (min-width: 768px){
-            font-size: 2.4rem;
-          }
+        @media (min-width: 768px) {
+          font-size: 2.4rem;
+        }
       }
-      &--slogan{
+      &--slogan {
         @include textStyle($poppins, $medium, 1.2rem, $greyishBrownTwo);
         padding-bottom: 1rem;
         @media (min-width: 768px) {
           font-size: 1.6rem;
         }
       }
-      &--desc{
+      &--desc {
         @include textStyle($poppins, $regular, 0.8rem, $greyishBrown88);
         padding-bottom: 1.81rem;
         @media (min-width: 768px) {
@@ -119,7 +120,7 @@
           padding-bottom: 0;
         }
       }
-      &--tecIcon{
+      &--tecIcon {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -128,7 +129,7 @@
           flex-direction: column-reverse;
           align-items: flex-start;
         }
-        &--technologies{
+        &--technologies {
           @include textStyle($catamaran, $medium, 1rem, $greyishBrown);
           @media (min-width: 768px) {
             background-color: rgba(0, 0, 0, 0.05);
@@ -140,15 +141,15 @@
             transform: translateY(-1rem);
           }
         }
-        &--div{
+        &--div {
           padding-right: 1.83rem;
           display: flex;
           gap: 0.8rem;
-          @media (min-width: 768px){
+          @media (min-width: 768px) {
             padding-left: 18rem;
             transform: translateY(-1rem);
           }
-          &--icon{
+          &--icon {
             display: flex;
             justify-content: center;
             width: 1.65rem;
@@ -159,34 +160,34 @@
             border: solid 2px #bcd1d8;
             border-radius: 50%;
           }
-      }
+        }
       }
     }
     &__infoAutor {
       width: 13.09rem;
       padding-left: 1rem;
       padding-right: 0.2rem;
-      @media (min-width: 768px){
+      @media (min-width: 768px) {
         width: 18.41rem;
       }
-      &--image{
+      &--image {
         width: 7.05rem;
         margin-top: 3.7rem;
         margin-left: 2.65rem;
-        @media (min-width: 768px){
+        @media (min-width: 768px) {
           width: 10rem;
         }
       }
-      &--job{
+      &--job {
         @include textStyle($catamaran, $medium, 1rem, $warmGrey);
         text-align: center;
-        @media (min-width: 768px){
+        @media (min-width: 768px) {
           font-size: 1.4rem;
         }
       }
-      &--autor{
+      &--autor {
         @include textStyle($catamaran, $bold, 1.4rem, $black80);
-        @media (min-width: 768px){
+        @media (min-width: 768px) {
           font-size: 1.8rem;
         }
       }
