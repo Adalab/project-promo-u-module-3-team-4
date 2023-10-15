@@ -8,7 +8,7 @@ import logo from '../images/logo-adalab.png'
 import user from '../images/userwoman.jpg'
 
 function App() {
-  const [data, setData] = useState({name:"", slogan:"", repo:"", demo:"", desc:"", technologies:"", job:"", autor:"", image:'https://images.pexels.com/photos/17910786/pexels-photo-17910786/free-photo-of-blanco-y-negro-hombre-vintage-marca.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', photo:'https://images.pexels.com/photos/2361952/pexels-photo-2361952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'});
+  const [data, setData] = useState({name:"", slogan:"", repo:"", demo:"", desc:"", technologies:"", job:"", autor:"", image:'https://m.media-amazon.com/images/I/51Q+jTasiGL.jpg', photo:'https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'});
 
 
   const [errorName, setErrorName] = useState('');
