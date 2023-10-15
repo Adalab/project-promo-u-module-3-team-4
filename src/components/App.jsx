@@ -8,7 +8,7 @@ import logo from '../images/logo-adalab.png'
 import user from '../images/userwoman.jpg'
 
 function App() {
-  const [data, setData] = useState({name:"", slogan:"", repo:"", demo:"", desc:"", technologies:"", job:"", autor:"", image:'https://images.pexels.com/photos/2361952/pexels-photo-2361952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', photo:'https://images.pexels.com/photos/2361952/pexels-photo-2361952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'});
+  const [data, setData] = useState({name:"", slogan:"", repo:"", demo:"", desc:"", technologies:"", job:"", autor:"", image:'https://images.pexels.com/photos/17910786/pexels-photo-17910786/free-photo-of-blanco-y-negro-hombre-vintage-marca.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', photo:'https://images.pexels.com/photos/2361952/pexels-photo-2361952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'});
 
 
   const [errorName, setErrorName] = useState('');
@@ -141,7 +141,7 @@ function App() {
               </section>
 
               <section className="preview__autor__infoAutor">
-                <img className="preview__autor__infoAutor--image" src={user} alt="" />
+                <img className="preview__autor__infoAutor--image" src={user || data.image} alt="" />
                 <p className="preview__autor__infoAutor--job">{data.job || 'Full Stack Developer'}</p>
                 <p className="preview__autor__infoAutor--autor">{data.autor || 'Emmelie Björklund'}</p>
               </section>
@@ -265,18 +265,11 @@ function App() {
               </button>
             </section>
 
-
-
-            {/* <section className="card hidden">
-            <span>La tarjeta ha sido creada:{previewUrl} </span>
-            <a  href={previewUrl} target="_blank" rel="noreferrer"></a>
-            </section> */}
-
             <section className="card">
               {successMessage && (
                 <>
-                  <span className='linkMessage'>{successMessage} {previewUrl}</span>
-                  <a href={previewUrl} target="_blank" rel="noreferrer">
+                  <span className='linkMessage'>{successMessage}</span>
+                  <a className='linkMessage' href={previewUrl} target="_blank" rel="noreferrer">  {previewUrl}
                   </a>
                 </>
               )}
