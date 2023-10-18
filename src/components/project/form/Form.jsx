@@ -2,6 +2,23 @@ import '../../../styles/layout/form.scss';
 import Butons from './Butons';
 
 const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, errorJob, errorAutor,errorDemo, errorRepo, previewUrl, successMessage, errorMessage, handleInput, handleCreateProject}) => {
+
+  const handleInputForm = (ev)=> {
+
+    const id = ev.target.id;
+    const value = ev.target.value;
+
+    handleInput({ ...data, [id]: value });
+
+  }
+
+  /* 
+   Se ha creado un nueva función con el nombre que quieras que ahora es el evento y recoge los parametros que tenia antes la handleInput del App. Le retorna a APP los resultados a través de la linea 11.
+   Además se ha cambiado los onChange de {handleInput} a {handleInputForm}
+  */
+
+
+
     return (
         <form className="form"  onSubmit={(ev)=>{ev.preventDefault()}} >
             <h2 className="form__title">Información</h2>
@@ -18,7 +35,7 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
                 placeholder="Nombre del proyecto *"
                 name="name"
                 id="name"
-                onChange={handleInput}
+                onChange={handleInputForm }
                 value={data.name}
                 required
               />
@@ -29,7 +46,7 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
                 name="slogan"
                 id="slogan"
                 placeholder="Slogan *"
-                onChange={handleInput}
+                onChange={handleInputForm }
                 value={data.slogan}
                 required
               />
@@ -40,8 +57,8 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
                     type="text"
                     name="repo"
                     id="repo"
-                    placeholder="Repo"
-                    onChange={handleInput}
+                    placeholder="Repo *"
+                    onChange={handleInputForm }
                     value={data.repo}
                     required
                   />
@@ -49,10 +66,10 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
                   <input
                     className="form__project--input"
                     type="text"
-                    placeholder="Demo"
+                    placeholder="Demo *"
                     name="demo"
                     id="demo"
-                    onChange={handleInput}
+                    onChange={handleInputForm }
                     value={data.demo}
                     required
                   />
@@ -64,7 +81,7 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
                 placeholder="Tecnologías *"
                 name="technologies"
                 id="technologies"
-                onChange={handleInput}
+                onChange={handleInputForm }
                 value={data.technologies}
                 required
               />
@@ -75,7 +92,7 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
                 placeholder="Descripción *"
                 name="desc"
                 id="desc"
-                onChange={handleInput}
+                onChange={handleInputForm }
                 value={data.desc}
                 required
               ></textarea>
@@ -94,7 +111,7 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
                 placeholder="Nombre *"
                 name="autor"
                 id="autor"
-                onChange={handleInput}
+                onChange={handleInputForm }
                 value={data.autor}
                 required
               />
@@ -105,7 +122,7 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
                 placeholder="Trabajo *"
                 name="job"
                 id="job"
-                onChange={handleInput}
+                onChange={handleInputForm }
                 value={data.job}
                 required
               />
