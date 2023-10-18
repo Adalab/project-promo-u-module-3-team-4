@@ -111,8 +111,21 @@ function App() {
           <Hero />
 
           <section className="section">
-            <SectionPreview />
-            <Form />
+            <SectionPreview data = {data}/>
+            <Form 
+            data={data} 
+            errorName = {errorName}
+            errorSlogan ={errorSlogan}
+            errorDesc =  {errorDesc}
+            errorTechnologies ={errorTechnologies}
+            errorJob = {errorJob}
+            errorAutor = {errorAutor}
+            previewUrl ={previewUrl}
+            successMessage = {successMessage}
+            errorMessage = {errorMessage}
+            handleInput = {handleInput}
+            handleCreateProject = {handleCreateProject}
+            />
           </section>
         </main>
         <Footer />

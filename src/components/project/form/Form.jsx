@@ -1,6 +1,7 @@
 import '../../../styles/layout/form.scss';
+import Butons from './Butons';
 
-const Form = () => {
+const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, errorJob, errorAutor, previewUrl, successMessage, errorMessage, handleInput, handleCreateProject}) => {
     return (
         <section className="form">
             <h2 className="form__title">Información</h2>
@@ -108,8 +109,16 @@ const Form = () => {
               />
               <p className='errorMessage'>{errorJob}</p>
             </fieldset>
+            
+            <section className="form__buttons">
+                <Butons onClick={handleCreateProject} text='Subir foto del proyecto' className='form__buttons--btn'/>
+                <Butons onClick={handleCreateProject} text= 'Subir foto de la autora' className='form__buttons--btn'/>
+            </section>
+            <section className="form__button">
+              <Butons onClick={handleCreateProject} text='Crear proyecto' className='form__button--btnLarge'/>
+            </section>
+  
 
-            <Butons />
 
             <section className="card">
               {successMessage && (

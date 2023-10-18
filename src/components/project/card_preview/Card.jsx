@@ -2,7 +2,7 @@ import '../../../styles/layout/preview.scss';
 import user from '../../../images/userwoman.jpg';
 
 
-const Card = () => {
+const Card = ({data}) => {
     return (
         <section className="preview__autor">
         <section className="preview__autor__infoProject">

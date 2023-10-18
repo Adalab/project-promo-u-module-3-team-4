@@ -1,22 +1,11 @@
 import '../../../styles/layout/form.scss';
 
-const Butons = () => {
+const Butons = ({ className, text, onClick }) => {
     return (
-        <>
-        <section className="form__buttons">
-              <button className="form__buttons--btn">Subir foto de proyecto</button>
-              <button className="form__buttons--btn">Subir foto de autora</button>
-            </section>
-            <section className="form__button">
-              <button className="form__button--btnLarge"
-               onClick={handleCreateProject}
-               >
-                Crear Proyecto
-              </button>
-            </section>
-            </>
-
+        
+          <button className={className} onClick ={onClick}>{text}</button>
+      
     );
 }
 
-export default Butons;
+export default Butons; 

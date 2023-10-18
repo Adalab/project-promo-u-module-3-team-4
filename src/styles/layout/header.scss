@@ -29,10 +29,6 @@
 
     &--text {
       @include textStyle($poppins, $light, 1.4rem, $white50);
-      // color: rgba(255, 255, 255, 0.5);
-      // font-family: 'Poppins', sans-serif;
-      // font-weight: 300;
-      // font-size: 1.4rem;
     }
   }
 
