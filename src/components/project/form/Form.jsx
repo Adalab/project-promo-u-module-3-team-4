@@ -1,9 +1,9 @@
 import '../../../styles/layout/form.scss';
 import Butons from './Butons';
 
-const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, errorJob, errorAutor, previewUrl, successMessage, errorMessage, handleInput, handleCreateProject}) => {
+const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, errorJob, errorAutor,errorDemo, errorRepo, previewUrl, successMessage, errorMessage, handleInput, handleCreateProject}) => {
     return (
-        <section className="form">
+        <form className="form"  onSubmit={(ev)=>{ev.preventDefault()}} >
             <h2 className="form__title">Información</h2>
 
             <section className="form__askInfo">
@@ -45,6 +45,7 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
                     value={data.repo}
                     required
                   />
+                  <p className='errorMessage'>{errorRepo}</p>
                   <input
                     className="form__project--input"
                     type="text"
@@ -55,6 +56,7 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
                     value={data.demo}
                     required
                   />
+                  <p className='errorMessage'>{errorDemo}</p>
               </div>
               <input
                 className="form__project--input"
@@ -130,7 +132,7 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
               )}
               {errorMessage && <span className="errorMessage">{errorMessage}</span>}
             </section>
-            </section>
+            </form>
     );
 }
 

@@ -31,6 +31,8 @@ function App() {
   const [errorTechnologies, setErrorTechnologies] = useState("");
   const [errorJob, setErrorJob] = useState("");
   const [errorAutor, setErrorAutor] = useState("");
+  const [errorRepo, setErrorRepo] = useState("");
+  const [errorDemo, setErrorDemo] = useState("");
   const [previewUrl, setPreviewUrl] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -82,6 +84,19 @@ function App() {
     } else {
       setErrorJob("");
     }
+    if (data.repo === "") {
+      setErrorRepo("Campo Obligatorio");
+      hasError = true;
+    } else {
+      setErrorRepo("");
+    }
+    if (data.demo === "") {
+      setErrorDemo("Campo Obligatorio");
+      hasError = true;
+    } else {
+      setErrorDemo("");
+    }
+    
 
     if (!hasError) {
       callToApi(data)
@@ -120,6 +135,8 @@ function App() {
             errorTechnologies ={errorTechnologies}
             errorJob = {errorJob}
             errorAutor = {errorAutor}
+            errorRepo = {errorRepo}
+            errorDemo = {errorDemo}
             previewUrl ={previewUrl}
             successMessage = {successMessage}
             errorMessage = {errorMessage}
