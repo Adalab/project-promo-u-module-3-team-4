@@ -86,6 +86,7 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
               <textarea
                 className="form__project--textarea"
                 type="text"
+                wrap='hard'
                 placeholder="Descripción *"
                 name="desc"
                 id="desc"

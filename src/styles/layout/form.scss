@@ -329,6 +329,9 @@
       color: #4a4174;
       padding-top: 1.12rem;
       padding-left: 1.68rem;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      overflow-y: hidden;
       &::placeholder {
         @include textStyle($montserrat, $bold, 1rem, #4a4174);
         @media (min-width: 1024px) {

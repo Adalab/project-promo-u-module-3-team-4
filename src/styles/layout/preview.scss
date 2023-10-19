@@ -328,6 +328,8 @@
       &--desc {
         @include textStyle($poppins, $regular, 0.8rem, $greyishBrown88);
         padding-bottom: 1.81rem;
+        overflow-x: auto;
+        overflow-y: hidden;
         @media (min-width: 768px) {
           font-size: 1rem;
           padding-bottom: 0;
@@ -388,20 +390,20 @@
       }
       &--image {
         width: 7.05rem;
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
           width: 14rem;
         }
       }
       &--job {
         @include textStyle($catamaran, $medium, 1rem, $warmGrey);
         text-align: center;
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
           font-size: 1.4rem;
         }
       }
       &--autor {
         @include textStyle($catamaran, $bold, 1.4rem, $black80);
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
           font-size: 1.8rem;
         }
       }
