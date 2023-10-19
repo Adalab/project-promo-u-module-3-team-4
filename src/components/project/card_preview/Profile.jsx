@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import defaultAvatar from '../../../images/covercut.jpg';
+import defaultAvatar from '../../../images/projectday.jpg';
 import '../../../styles/layout/Profile.scss';
 
 function Profile(props) {

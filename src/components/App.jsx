@@ -71,7 +71,7 @@ function App() {
       { field: data.demo, setError: setErrorDemo},
     ];
     fieldsToCheck.map(({ field, setError }) => {
-      setError(!field || !field.match(allowedCharacters) ? "Campo Obligatorio" : "");
+      setError(!field || !field.match(allowedCharacters) ? "Campo Obligatorio *" : "");
     });
     
     
@@ -84,7 +84,7 @@ function App() {
           setErrorMessage("");
         })
         .catch((error) => {
-          setErrorMessage("Error al crear la tarjeta.");
+          setErrorMessage("Por favor, revise los campos a rellenar.");
           setSuccessMessage("");
         });
     } else {

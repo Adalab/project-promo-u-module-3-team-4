@@ -1,5 +1,5 @@
 import '../../../styles/layout/preview.scss';
-import user from '../../../images/userwoman.jpg';
+import user from '../../../images/avatarnew.png';
 
 
 const Card = ({data}) => {
@@ -18,8 +18,8 @@ const Card = ({data}) => {
           <section className="preview__autor__infoProject--tecIcon">
             <p className="preview__autor__infoProject--tecIcon--technologies">{data.technologies ||'React JS - HTML- CSS'}</p>
             <div className='preview__autor__infoProject--tecIcon--div'>
-              <a href={data.demo || '#'}target="_blank" rel="noreferrer" className='preview__autor__infoProject--tecIcon--div--icon'><i className="fa-solid fa-globe"></i></a>
-              <a href={data.repo || '#'}target="_blank" rel="noreferrer" className='preview__autor__infoProject--tecIcon--div--icon'><i className="fa-brands fa-github"></i></a>
+              <a href={data.demo || '#'}target="_blank" rel="noreferrer" className='preview__autor__infoProject--tecIcon--div--icon'><i className="fa-solid fa-globe iconsLink"></i></a>
+              <a href={data.repo || '#'}target="_blank" rel="noreferrer" className='preview__autor__infoProject--tecIcon--div--icon'><i className="fa-brands fa-github iconsLink"></i></a>
             </div>
           </section>
         </section>

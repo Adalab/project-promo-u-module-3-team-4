@@ -1,8 +1,48 @@
+//NOCHE
+// .profile__avatar {
+//   border: none;
+//   width: 300px;
+//   height: 300px;
+//   border-radius: 1rem;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   box-shadow: 0.25rem 0.25rem 1rem #7a8fd4, 0.25rem -0.25rem 1rem #f5f5f5a2, -0.25rem 0.25rem 1.5rem #7a8fd4, -0.25rem -0.25rem 1.5rem #f5f5f5a2, 0.25rem 0 0.5rem #7a8fd4, -0.25rem 0 0.5rem #f5f5f5a2, 0 0.25rem 2rem #7a8fd4, 0 -0.25rem 2rem #f5f5f5a2;
+//   @media (min-width: 768px){
+//     width: 400px;
+//     height: 400px;
+//   }
+//   @media (min-width: 1024px){
+//     width: 500px;
+//     height: 500px;
+//   }
+//   @media (min-width: 1440px){
+//     width: 700px;
+//     height: 500px;
+//   }
+// }
+
+
+//DIA
 .profile__avatar {
-  border: 1px solid #ccc;
+  border: none;
   width: 300px;
   height: 300px;
+  border-radius: 1rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: 0.25rem 0.25rem 1rem #fff, 0.25rem -0.25rem 1rem #f5f5f5, -0.25rem 0.25rem 1.5rem #fff, -0.25rem -0.25rem 1.5rem #f5f5f5, 0.25rem 0 0.5rem #fff, -0.25rem 0 0.5rem #f5f5f5, 0 0.25rem 2rem #fff, 0 -0.25rem 2rem #f5f5f5;
+  @media (min-width: 768px){
+    width: 400px;
+    height: 400px;
+  }
+  @media (min-width: 1024px){
+    width: 500px;
+    height: 500px;
+  }
+  @media (min-width: 1440px){
+    width: 700px;
+    height: 500px;
+  }
 }
