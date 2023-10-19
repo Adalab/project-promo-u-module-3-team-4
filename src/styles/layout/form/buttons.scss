@@ -17,19 +17,36 @@
       padding-top: 1.5rem;
     }
     &--btn {
-      @include textStyle($montserrat, $bold, 1rem, $white);
+      @include textStyle($montserrat, $bold, 1rem, #4a4174);
       width: 12.12rem;
       height: 3.26rem;
-      border: none;
+      border: solid 0.2rem #4a4174;
       border-radius: 4rem;
-      background-image: linear-gradient(to right, $darkLilac -2%, #c0b7e8 98%);
+      background-color: #ffffff8e;
       text-align: center;
+      padding-top: 0.2rem;
       @media (min-width: 1024px) {
         width: 16rem;
         height: 4.12rem;
         font-size: 1.2rem;
+        padding-top: 0.4rem;
       }
     }
   }
 
+}
+.form__button--btnLarge{
+  @include textStyle($montserrat, $bold, 1rem, #4a4174);
+  width: 12.12rem;
+  height: 3.26rem;
+  border: solid 0.2rem #4a4174;
+  border-radius: 4rem;
+  background-color: #ffffff8e;
+  padding-inline: 1.4rem;
+  box-shadow: 0.25rem 0.25rem 1rem #fff, 0.25rem -0.25rem 1rem #f5f5f5, -0.25rem 0.25rem 1.5rem #fff, -0.25rem -0.25rem 1.5rem #f5f5f5, 0.25rem 0 0.5rem #fff, -0.25rem 0 0.5rem #f5f5f5, 0 0.25rem 2rem #fff, 0 -0.25rem 2rem #f5f5f5;
+  @media (min-width: 1024px) {
+    width: 18.4rem;
+    height: 4.12rem;
+    font-size: 1.6rem;
+  }
 }

@@ -2,7 +2,10 @@
 @import '../core/mixin.scss';
 
 .container {
-  background-color: #3a3650;
+  background-image: url(../../images/dia.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .header {
   height: 8.6rem;
@@ -23,12 +26,12 @@
     &--icon {
       &--laptop {
         font-size: 2.6rem;
-        color: white;
+        color: #211e2e;
       }
     }
 
     &--text {
-      @include textStyle($poppins, $light, 1.4rem, $white50);
+      @include textStyle($poppins, $light, 1.4rem, #211e2e);
     }
   }
 
@@ -42,3 +45,45 @@
     }
   }
 }
+
+// .container {
+//   background-color: #3a3650;
+// }
+// .header {
+//   height: 8.6rem;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: space-between;
+//   padding-inline: 2.2rem;
+//     @media (min-width: 768px){
+//       height: 6.4rem;
+//       padding-left: 5.5rem;
+//       padding-right: 3.4rem;
+//     }
+//   &__div{
+//     display: flex;
+//     align-items: center;
+//     gap: 0.7rem;
+//     &--icon {
+//       &--laptop {
+//         font-size: 2.6rem;
+//         color: white;
+//       }
+//     }
+
+//     &--text {
+//       @include textStyle($poppins, $light, 1.4rem, $white50);
+//     }
+//   }
+
+//   &__logo {
+//     &--img {
+//       width: 12.3rem;
+//       padding-inline: 2.2rem;
+//       @media (min-width: 768px){
+//         width: 11.5rem;
+//       }
+//     }
+//   }
+// }

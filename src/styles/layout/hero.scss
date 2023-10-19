@@ -14,14 +14,15 @@
       padding-bottom: 2rem;
     }
   &__title {
-    @include textStyle($montserrat, $bold, 2rem, $white);
+    @include textStyle($montserrat, $bold, 2rem, #4a4174);
+    text-shadow: 0.025rem 0.025rem 1rem #ffffff, 0.025rem -0.025rem 1rem #ffffff, -0.025rem 0.025rem 1rem #ffffff, -0.025rem -0.025rem 1rem #ffffff, 0.025rem 0 0.1rem #ffffff, -0.025rem 0 0.1rem #ffffff, 0 0.025rem 0.25rem #ffffff, 0 -0.025rem 0.25rem #ffffff;
     @media (min-width: 768px){
       font-size: 4rem;
     }
   }
 
   &__text {
-    @include textStyle($montserrat, $light, 1.2rem, $white);
+    @include textStyle($montserrat, $medium, 1.2rem, #4a4174);
     text-align: center;
     @media (min-width: 768px){
       font-size: 1.8rem;
@@ -34,8 +35,9 @@
     text-transform: uppercase;
     width: 11.64rem;
     height: 2.19rem;
-    background-color: #8176af;
+    background-color: #7a8fd4;
     border: none;
+    box-shadow: 0.25rem 0.25rem 1rem #fff, 0.25rem -0.25rem 1rem #f5f5f5, -0.25rem 0.25rem 1.5rem #fff, -0.25rem -0.25rem 1.5rem #f5f5f5, 0.25rem 0 0.5rem #fff, -0.25rem 0 0.5rem #f5f5f5, 0 0.25rem 2rem #fff, 0 -0.25rem 2rem #f5f5f5;
     @media (min-width: 768px){
       width: 15.4rem;
       height: 2.9rem;
@@ -56,7 +58,7 @@ input[type="checkbox"] {
   display: block;
   width: 4rem;
   height: 2rem;
-  background: #092c3e;
+  background: #4a4174;
   cursor: pointer;
   border-radius: 2rem;
   overflow: hidden;
@@ -78,7 +80,7 @@ input[type="checkbox"]:checked ~ .check {
 }
 
 input[type="checkbox"]:checked ~ .check:before {
-    transform: translateX(-5rem);
+    transform: translateX(2rem);
 }
 
 .check:after {
@@ -86,7 +88,7 @@ input[type="checkbox"]:checked ~ .check:before {
   position: absolute;
   top: 0.2rem;
   left: 0.2rem;
-  background: #092c3e;
+  background: #4a4174;
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 50%;
@@ -95,5 +97,27 @@ input[type="checkbox"]:checked ~ .check:before {
 }
 
 input[type="checkbox"]:checked ~ .check:after {
-    transform: translateX(0rem);
+    transform: translateX(2rem);
+}
+
+.dayNight {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.sun {
+  color: #4a4174;
+  font-size: 2.5rem;
+}
+.moon {
+  color: white;
+  font-size: 2rem;
+}
+
+.sun.hidden {
+  display: none;
+}
+
+.moon.hidden {
+  display: none;
 }
