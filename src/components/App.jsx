@@ -43,6 +43,11 @@ function App() {
     setAvatar(avatar);
   };
 
+  const [imgProject, setImgProject] = useState('');
+  const updateImgProject = (imgProject) => {
+    setImgProject(imgProject);
+  } //Nuevo
+
   const handleInput = (value) => {
 
     setData(value);
@@ -117,6 +122,8 @@ function App() {
             handleCreateProject = {handleCreateProject}
             avatar={avatar}
             updateAvatar={updateAvatar}
+            imgProject={imgProject} //Nuevo
+            updateImgProject={updateImgProject} //Nuevo
             />
           </section>
         </main>

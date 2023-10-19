@@ -1,9 +1,10 @@
 import '../../../styles/layout/form.scss';
 import Butons from './Butons';
 import GetAvatar from './GetAvatar';
+import GetImgProject from './GetImgProject';
 
 
-const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, errorJob, errorAutor,errorDemo, errorRepo, previewUrl, successMessage, errorMessage, handleInput, handleCreateProject,updatePhoto}) => {
+const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, errorJob, errorAutor,errorDemo, errorRepo, previewUrl, successMessage, errorMessage, handleInput, handleCreateProject,updateAvatar, updateImgProject}) => {
 
   const handleInputForm = (ev)=> {
 
@@ -125,11 +126,12 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
               <p className='errorMessage'>{errorJob}</p>
             </fieldset>
             
-            <section className="form__buttons">
+            <section className="section__buttons">
                 {/* <Butons onClick={handleCreateProject} text='Subir foto del proyecto' className='form__buttons--btn'/> */}
-                <GetAvatar data={data} updateAvatar={updatePhoto} text='Subir imagen de proyecto'/>
+                <GetImgProject data={data} updateImgProject={updateImgProject} text='Subir imagen del proyecto' />
 
-                <Butons onClick={handleCreateProject} text= 'Subir foto de la autora' className='form__buttons--btn'/>
+                {/* <Butons onClick={handleCreateProject} text= 'Subir foto de la autora' className='form__buttons--btn'/> */}
+                <GetAvatar data={data} updateAvatar={updateAvatar} text='Subir imagen de la autora'/>
             </section>
             <section className="form__button">
               <Butons onClick={handleCreateProject} text='Crear proyecto' className='form__button--btnLarge'/>

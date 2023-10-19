@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import defaultAvatar from '../../../images/covercut.jpg';
-import '../../../styles/layout/GetAvatar.scss';
+import defaultAvatar from '../../../images/userwoman.jpg';
+import '../../../styles/layout/form/buttons.scss';
 
 function GetAvatar({
   avatar = defaultAvatar,
@@ -63,8 +63,8 @@ function GetAvatar({
   };
 
   return (
-    <div className="get-avatar">
-      <label className="get-avatar__label">
+    <div className="get-avatar div__buttons">
+      <label className="get-avatar__label div__buttons--btn">
         {text}
         <input
           type="file"
@@ -73,11 +73,6 @@ function GetAvatar({
           onChange={uploadImage}
         />
       </label>
-
-      <div
-        className="get-avatar__preview"
-        style={{ backgroundImage: `url(${avatar})` }}
-      ></div>
     </div>
   );
 }
