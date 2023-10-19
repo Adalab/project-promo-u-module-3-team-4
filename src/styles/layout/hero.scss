@@ -44,3 +44,56 @@
     
   }
 }
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  visibility: hidden;
+  display: none;
+}
+
+.check {
+  position: relative;
+  display: block;
+  width: 4rem;
+  height: 2rem;
+  background: #092c3e;
+  cursor: pointer;
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: ease-in 0.5s;
+}
+input[type="checkbox"]:checked ~ .check {
+  background: #fff;
+}
+.check:before {
+  content: '';
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  background: #fff;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+input[type="checkbox"]:checked ~ .check:before {
+    transform: translateX(-5rem);
+}
+
+.check:after {
+  content: '';
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  background: #092c3e;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  transition: 0.5s;
+  transform: translateX(5rem);
+}
+
+input[type="checkbox"]:checked ~ .check:after {
+    transform: translateX(0rem);
+}

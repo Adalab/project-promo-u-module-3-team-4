@@ -8,6 +8,10 @@ const Hero = () => {
         <p className='hero__text'>Escaparate en línea para recoger ideas a través de la tecnología</p>
         <button className='hero__button'>Ver proyectos</button>
 
+        <label>
+          <input type="checkbox" />
+          <span className='check'></span>
+        </label>
       </section>
     );
 }
