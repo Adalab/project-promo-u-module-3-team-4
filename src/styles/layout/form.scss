@@ -7,15 +7,12 @@
   border: solid 1px #00000000;
   width: 29.81rem;
   overflow-y: auto;
-  //   height: 68rem;
   border-radius: 1rem;
   @media (min-width: 768px) {
     width: 40%;
-    // height: 70.3rem;
   }
   @media (min-width: 1024px) {
     width: 40%;
-    // height: 79.3rem;
   }
   &__title {
     @include textStyle($montserrat, $bold, 3rem, $white);
@@ -106,7 +103,7 @@
     }
     .juntos {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       gap: 0.5rem;
     }
   }

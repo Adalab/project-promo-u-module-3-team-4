@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import storage from "../services/localStorage";
 import callToApi from "../services/api";
 import "../styles/App.scss";
@@ -11,19 +11,6 @@ import "../styles/core/mixin.scss";
 import "../styles/core/variables.scss";
 
 function App() {
-  // const [data, setData] = useState({
-  //   name: "",
-  //   slogan: "",
-  //   repo: "",
-  //   demo: "",
-  //   desc: "",
-  //   technologies: "",
-  //   job: "",
-  //   autor: "",
-  //   image: "https://m.media-amazon.com/images/I/51Q+jTasiGL.jpg",
-  //   photo:
-  //     "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  // });
 
   const [data, setData] = useState(storage.get("infoFormLS", {
     name: "",
@@ -51,79 +38,20 @@ function App() {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const [avatar, setAvatar] = useState('');
+  const updateAvatar = (avatar) => {
+    setAvatar(avatar);
+  };
+
   const handleInput = (value) => {
 
     setData(value);
     storage.set('infoFormLS', value);
   };
 
-  /* 
-    Es es la función que habia antes de hacer lifting. A la función handleInput de lifting se le añade el LS para que guarde los datos del formulario.
-
-    const handleInput = (ev) => {
-    const id = ev.target.id;
-    const value = ev.target.value;
-
-    setData({ ...data, [id]: value });
-  };
-  
-  
-  */
 
   const handleCreateProject = () => {
    
-
-    // if (data.name === "") {
-    //   setErrorName("Campo Obligatorio");
-    //   hasError = true;
-    // } else {
-    //   setErrorName("");
-    // }
-
-    // if (data.slogan === "") {
-    //   setErrorSlogan("Campo Obligatorio");
-    //   hasError = true;
-    // } else {
-    //   setErrorSlogan("");
-    // }
-    // if (data.technologies === "") {
-    //   setErrorTechnologies("Campo Obligatorio");
-    //   hasError = true;
-    // } else {
-    //   setErrorTechnologies("");
-    // }
-    // if (data.desc === "") {
-    //   setErrorDesc("Campo Obligatorio");
-    //   hasError = true;
-    // } else {
-    //   setErrorDesc("");
-    // }
-    // if (data.autor === "") {
-    //   setErrorAutor("Campo Obligatorio");
-    //   hasError = true;
-    // } else {
-    //   setErrorAutor("");
-    // }
-    // if (data.job === "") {
-    //   setErrorJob("Campo Obligatorio");
-    //   hasError = true;
-    // } else {
-    //   setErrorJob("");
-    // }
-    // if (data.repo === "") {
-    //   setErrorRepo("Campo Obligatorio");
-    //   hasError = true;
-    // } else {
-    //   setErrorRepo("");
-    // }
-    // if (data.demo === "") {
-    //   setErrorDemo("Campo Obligatorio");
-    //   hasError = true;
-    // } else {
-    //   setErrorDemo("");
-    // }
-
-
     let hasError = false;
 
     const allowedCharacters = /^[a-zA-Z0-9\s'"\-\/]+$/;
@@ -171,7 +99,7 @@ function App() {
           <Hero />
 
           <section className="section">
-            <SectionPreview data = {data}/>
+            <SectionPreview data = {data} avatar={avatar}/>
             <Form 
             data={data} 
             errorName = {errorName}
@@ -187,6 +115,8 @@ function App() {
             errorMessage = {errorMessage}
             handleInput = {handleInput}
             handleCreateProject = {handleCreateProject}
+            avatar={avatar}
+            updateAvatar={updateAvatar}
             />
           </section>
         </main>

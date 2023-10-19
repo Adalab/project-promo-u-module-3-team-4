@@ -1,7 +1,9 @@
 import '../../../styles/layout/form.scss';
 import Butons from './Butons';
+import GetAvatar from './GetAvatar';
 
-const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, errorJob, errorAutor,errorDemo, errorRepo, previewUrl, successMessage, errorMessage, handleInput, handleCreateProject}) => {
+
+const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, errorJob, errorAutor,errorDemo, errorRepo, previewUrl, successMessage, errorMessage, handleInput, handleCreateProject,updatePhoto}) => {
 
   const handleInputForm = (ev)=> {
 
@@ -11,12 +13,6 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
     handleInput({ ...data, [id]: value });
 
   }
-
-  /* 
-   Se ha creado un nueva función con el nombre que quieras que ahora es el evento y recoge los parametros que tenia antes la handleInput del App. Le retorna a APP los resultados a través de la linea 11.
-   Además se ha cambiado los onChange de {handleInput} a {handleInputForm}
-  */
-
 
 
     return (
@@ -130,7 +126,9 @@ const Form = ({data, errorName, errorSlogan, errorDesc, errorTechnologies, error
             </fieldset>
             
             <section className="form__buttons">
-                <Butons onClick={handleCreateProject} text='Subir foto del proyecto' className='form__buttons--btn'/>
+                {/* <Butons onClick={handleCreateProject} text='Subir foto del proyecto' className='form__buttons--btn'/> */}
+                <GetAvatar data={data} updateAvatar={updatePhoto} text='Subir imagen de proyecto'/>
+
                 <Butons onClick={handleCreateProject} text= 'Subir foto de la autora' className='form__buttons--btn'/>
             </section>
             <section className="form__button">
