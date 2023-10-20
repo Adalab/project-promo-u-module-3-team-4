@@ -52,7 +52,10 @@ const Card = ({ data }) => {
       </section>
 
       <section className="preview__autor__infoAutor">
-        <Profile avatar={data.image || defaultProfile} />
+        <Profile
+          avatar={data.image || defaultProfile}
+          classImage="profile__pic"
+        />
         <p className="preview__autor__infoAutor--job">
           {data.job || 'Full Stack Developer'}
         </p>

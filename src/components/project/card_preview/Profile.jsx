@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../../../styles/layout/Profile.scss';
 
-function Profile({ avatar }) {
+function Profile({ avatar, classImage }) {
+  console.log(avatar);
+
   return (
     <div
-      className="profile__avatar"
+      className={classImage}
       style={{ backgroundImage: `url(${avatar})` }}
     ></div>
   );
