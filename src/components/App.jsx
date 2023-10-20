@@ -7,8 +7,11 @@ import Footer from './footer/Footer';
 import SectionPreview from './project/card_preview/SectionPreview';
 import Form from './project/form/Form';
 import Hero from './hero/Hero';
+import Landing from './Landing';
+import Project from './Project';
 import '../styles/core/mixin.scss';
 import '../styles/core/variables.scss';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [data, setData] = useState(
@@ -100,28 +103,30 @@ function App() {
         <main className="main">
           <Hero />
 
-          <section className="section">
-            <SectionPreview data={data} />
-
-            <Form
-              data={data}
-              errorName={errorName}
-              errorSlogan={errorSlogan}
-              errorDesc={errorDesc}
-              errorTechnologies={errorTechnologies}
-              errorJob={errorJob}
-              errorAutor={errorAutor}
-              errorRepo={errorRepo}
-              errorDemo={errorDemo}
-              previewUrl={previewUrl}
-              successMessage={successMessage}
-              errorMessage={errorMessage}
-              handleInput={handleInput}
-              handleCreateProject={handleCreateProject}
-              updateImgProfile={updateImgProfile}
-              updateImgProject={updateImgProject}
+          <Routes>
+            {/* <Route path='/' element={<Landing data={data}/>} /> */}
+            <Route path='/' 
+            element={
+            <Project 
+            data={data}
+            errorName={errorName}
+            errorSlogan={errorSlogan}
+            errorDesc={errorDesc}
+            errorTechnologies={errorTechnologies}
+            errorJob={errorJob}
+            errorAutor={errorAutor}
+            errorRepo={errorRepo}
+            errorDemo={errorDemo}
+            previewUrl={previewUrl}
+            successMessage={successMessage}
+            errorMessage={errorMessage}
+            handleInput={handleInput}
+            handleCreateProject={handleCreateProject}
+            updateImgProfile={updateImgProfile}
+            updateImgProject={updateImgProject}
+            />}
             />
-          </section>
+          </Routes>
         </main>
         <Footer />
       </div>
