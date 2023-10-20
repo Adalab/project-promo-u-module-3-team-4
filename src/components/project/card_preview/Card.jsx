@@ -1,6 +1,6 @@
 import '../../../styles/layout/preview.scss';
 import Profile from './Profile';
-import defaultProfile from '../../../images/userwoman.jpg';
+import defaultProfile from '../../../images/avatarnew.png';
 
 const Card = ({ data }) => {
   return (

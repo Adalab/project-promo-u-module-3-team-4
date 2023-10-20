@@ -1,7 +1,7 @@
 import Card from './Card';
 import '../../../styles/layout/preview.scss';
 import Profile from './Profile';
-import defaultProject from '../../../images/covercut.jpg';
+import defaultProject from '../../../images/projectday.jpg';
 
 const SectionPreview = ({ data }) => {
   return (
