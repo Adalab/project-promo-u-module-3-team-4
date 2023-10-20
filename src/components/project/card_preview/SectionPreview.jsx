@@ -1,21 +1,16 @@
 import Card from './Card';
 import '../../../styles/layout/preview.scss';
-// import cover from '../../../images/covercut.jpg';
 import Profile from './Profile';
+import defaultProject from '../../../images/covercut.jpg';
 
+const SectionPreview = ({ data }) => {
+  return (
+    <section className="preview">
+      <Profile avatar={data.photo || defaultProject} />
 
-
-const SectionPreview = ({data, avatar}) => {
-    return (
-<section className="preview">
-
-{/* <img className="preview__img" src={cover || data.photo} alt="" /> */}
-<Profile avatar={avatar } />
-
-<Card data = {data} />
-
-</section>
-    );
-}
+      <Card data={data} avatar={data.image} />
+    </section>
+  );
+};
 
 export default SectionPreview;

@@ -1,17 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import defaultAvatar from '../../../images/projectday.jpg';
 import '../../../styles/layout/Profile.scss';
 
-function Profile(props) {
-  const avatar = props.avatar === '' ? defaultAvatar : props.avatar;
+function Profile({ avatar }) {
   return (
-    <div className="profile">
-      <div
-        className="profile__avatar"
-        style={{ backgroundImage: `url(${avatar})` }}
-      ></div>
-    </div>
+    <div
+      className="profile__avatar"
+      style={{ backgroundImage: `url(${avatar})` }}
+    ></div>
   );
 }
 
