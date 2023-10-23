@@ -12,6 +12,8 @@ import Project from './Project';
 import '../styles/core/mixin.scss';
 import '../styles/core/variables.scss';
 import { Routes, Route } from 'react-router-dom';
+import '../styles/layout/hero.scss';
+import ButtonLink from './ButtonLink';
 
 function App() {
   const [data, setData] = useState(
@@ -100,34 +102,40 @@ function App() {
       <div className="container">
         <Header />
 
-        <main className="main">
-          <Hero />
-
-          <Routes>
-            {/* <Route path='/' element={<Landing data={data}/>} /> */}
-            <Route path='/' 
+        <Routes>
+          <Route path="/" element={<Landing data={data} />} />
+          <Route
+            path="/create"
             element={
-            <Project 
-            data={data}
-            errorName={errorName}
-            errorSlogan={errorSlogan}
-            errorDesc={errorDesc}
-            errorTechnologies={errorTechnologies}
-            errorJob={errorJob}
-            errorAutor={errorAutor}
-            errorRepo={errorRepo}
-            errorDemo={errorDemo}
-            previewUrl={previewUrl}
-            successMessage={successMessage}
-            errorMessage={errorMessage}
-            handleInput={handleInput}
-            handleCreateProject={handleCreateProject}
-            updateImgProfile={updateImgProfile}
-            updateImgProject={updateImgProject}
-            />}
-            />
-          </Routes>
-        </main>
+              <main className="main">
+                <Hero />
+                <ButtonLink
+                  className="hero__button"
+                  text="Ver proyectos"
+                  root=""
+                />
+                <Project
+                  data={data}
+                  errorName={errorName}
+                  errorSlogan={errorSlogan}
+                  errorDesc={errorDesc}
+                  errorTechnologies={errorTechnologies}
+                  errorJob={errorJob}
+                  errorAutor={errorAutor}
+                  errorRepo={errorRepo}
+                  errorDemo={errorDemo}
+                  previewUrl={previewUrl}
+                  successMessage={successMessage}
+                  errorMessage={errorMessage}
+                  handleInput={handleInput}
+                  handleCreateProject={handleCreateProject}
+                  updateImgProfile={updateImgProfile}
+                  updateImgProject={updateImgProject}
+                />
+              </main>
+            }
+          />
+        </Routes>
         <Footer />
       </div>
     </>
