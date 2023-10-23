@@ -1,6 +1,13 @@
 @import '../core/variables.scss';
 @import '../core/mixin.scss';
 
+.main-landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .section-landing {
   display: flex;
   flex-direction: column;
