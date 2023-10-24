@@ -9,17 +9,20 @@ import ButtonLink from './ButtonLink';
 
 const Landing = ({ data }) => {
   return (
-    <main className="main-landing">
-      <Hero />
-      <ButtonLink
-        className="hero__button"
-        text="Crea tu proyecto"
-        root="create"
-      />
-      <section className="section-landing">
-        <Card data={data} />
-      </section>
-    </main>
+
+    <div className='container-landing'>
+      <main className="main-landing">
+        <Hero />
+        <ButtonLink
+          className="hero__button"
+          text="Crea tu proyecto"
+          root="create"
+        />
+        <section className="section-landing">
+          <Card data={data} />
+        </section>
+      </main>
+    </div>
   );
 };
 
