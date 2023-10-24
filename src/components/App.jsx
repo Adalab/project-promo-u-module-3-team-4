@@ -61,7 +61,7 @@ function App() {
   const handleCreateProject = () => {
     let hasError = false;
 
-    const allowedCharacters = /^[a-zA-Z0-9\s'"\-\/]+$/;
+    const allowedCharacters = /^[a-zA-Z0-9\s'"\-\/ñáéíóúÁÉÍÓÚ:/.?=&,;?!()]+$/;
     const fieldsToCheck = [
       { field: data.name, setError: setErrorName },
       { field: data.slogan, setError: setErrorSlogan },
