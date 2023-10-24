@@ -6,8 +6,7 @@
     display: flex;
     justify-content: center;
     @media (min-width: 768px){
-        justify-content: flex-start;
-        padding-left: 45rem;
+        justify-content: center;
     }
     &__logo {
         &--img {

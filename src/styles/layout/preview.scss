@@ -329,8 +329,7 @@
       &--desc {
         @include textStyle($poppins, $regular, 0.8rem, $greyishBrown88);
         padding-bottom: 1.81rem;
-        overflow-x: auto;
-        overflow-y: hidden;
+        overflow-y: auto;
         @media (min-width: 768px) {
           font-size: 1rem;
           padding-bottom: 0;
