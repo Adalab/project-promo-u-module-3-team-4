@@ -324,8 +324,12 @@
       height: 3.23rem;
       color: #4a4174;
       padding-left: 1.68rem;
+      &:valid{
+        box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.785) inset;
+        @include textStyle($montserrat, $bold, 1.5rem, #796bb7);
+      }
       &::placeholder {
-        @include textStyle($montserrat, $bold, 1rem, #4a4174);
+        @include textStyle($montserrat, $bold, 1rem, #796bb7);
         @media (min-width: 768px) {
           font-size: 1.4rem;
         }
@@ -346,6 +350,10 @@
       overflow-x: auto;
       white-space: pre-wrap;
       overflow-y: hidden;
+      &:valid{
+        box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.785) inset;
+        @include textStyle($montserrat, $bold, 1.5rem, #796bb7);
+      }
       &::placeholder {
         @include textStyle($montserrat, $bold, 1rem, #4a4174);
         @media (min-width: 1024px) {
@@ -379,6 +387,7 @@
         -0.025rem -0.025rem 1rem #ffffff, 0.025rem 0 0.1rem #ffffff,
         -0.025rem 0 0.1rem #ffffff, 0 0.025rem 0.25rem #ffffff,
         0 -0.025rem 0.25rem #ffffff;
+
       @media (min-width: 1024px) {
         font-size: 1.8rem;
       }
@@ -413,6 +422,10 @@
       height: 3.23rem;
       color: #4a4174;
       padding-left: 1.68rem;
+      &:valid{
+        box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.785) inset;
+        @include textStyle($montserrat, $bold, 1.5rem, #796bb7);
+      }
       &::placeholder {
         @include textStyle($montserrat, $bold, 1rem, #4a4174);
         @media (min-width: 1024px) {
