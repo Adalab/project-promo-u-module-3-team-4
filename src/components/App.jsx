@@ -56,6 +56,30 @@ function App() {
   const handleInput = (value) => {
     setData(value);
     storage.set('infoFormLS', value);
+    if (data.name !== '') {
+      setErrorName('');
+    }
+    if (data.slogan !== '') {
+      setErrorSlogan('');
+    }
+    if (data.technologies !== '') {
+      setErrorTechnologies('');
+    }
+    if (data.desc !== '') {
+      setErrorDesc('');
+    }
+    if (data.autor !== '') {
+      setErrorAutor('');
+    }
+    if (data.job !== '') {
+      setErrorJob('');
+    }
+    if (data.repo !== '') {
+      setErrorRepo('');
+    }
+    if (data.demo !== '') {
+      setErrorDemo('');
+    }
   };
 
   const handleCreateProject = () => {
