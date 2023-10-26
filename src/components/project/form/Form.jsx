@@ -19,12 +19,28 @@ const Form = ({
   handleCreateProject,
   updateImgProfile,
   updateImgProject,
+  handleReset,
 }) => {
   const handleInputForm = (ev) => {
     const id = ev.target.id;
     const value = ev.target.value;
 
     handleInput({ ...data, [id]: value });
+  };
+
+  const handleResetForm = (ev) => {
+    handleReset({
+      name: '',
+      slogan: '',
+      repo: '',
+      demo: '',
+      desc: '',
+      technologies: '',
+      job: '',
+      autor: '',
+      image: '',
+      photo: '',
+    });
   };
 
   return (
@@ -157,6 +173,11 @@ const Form = ({
           onClick={handleCreateProject}
           text="Crear proyecto"
           className="form__button--btnLarge"
+        />
+        <Butons
+          onClick={handleResetForm}
+          text=""
+          className="form__button--btnReset fa-regular fa-trash-can fa-2xl"
         />
       </section>
 

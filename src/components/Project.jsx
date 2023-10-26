@@ -1,27 +1,29 @@
-import SectionPreview from "./project/card_preview/SectionPreview";
-import Form from "./project/form/Form";
+import SectionPreview from './project/card_preview/SectionPreview';
+import Form from './project/form/Form';
 
-
-const Project = ({  data,
-    errorName,
-    errorSlogan,
-    errorDesc,
-    errorTechnologies,
-    errorJob,
-    errorAutor,
-    errorDemo,
-    errorRepo,
-    previewUrl,
-    successMessage,
-    errorMessage,
-    handleInput,
-    handleCreateProject,
-    updateImgProfile,
-    updateImgProject,}) => {
+const Project = ({
+  data,
+  errorName,
+  errorSlogan,
+  errorDesc,
+  errorTechnologies,
+  errorJob,
+  errorAutor,
+  errorDemo,
+  errorRepo,
+  previewUrl,
+  successMessage,
+  errorMessage,
+  handleInput,
+  handleCreateProject,
+  updateImgProfile,
+  updateImgProject,
+  handleReset,
+}) => {
   return (
     <section className="section">
-    <SectionPreview data={data} />
-    <Form
+      <SectionPreview data={data} />
+      <Form
         data={data}
         errorName={errorName}
         errorSlogan={errorSlogan}
@@ -38,9 +40,10 @@ const Project = ({  data,
         handleCreateProject={handleCreateProject}
         updateImgProfile={updateImgProfile}
         updateImgProject={updateImgProject}
-    />
-  </section>
+        handleReset={handleReset}
+      />
+    </section>
   );
 };
 
-export default Project
+export default Project;

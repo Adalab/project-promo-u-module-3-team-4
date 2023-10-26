@@ -82,6 +82,11 @@ function App() {
     }
   };
 
+  const handleReset = (value) => {
+    setData(value);
+    storage.clear();
+  };
+
   const handleCreateProject = () => {
     let hasError = false;
 
@@ -155,6 +160,7 @@ function App() {
                   handleCreateProject={handleCreateProject}
                   updateImgProfile={updateImgProfile}
                   updateImgProject={updateImgProject}
+                  handleReset={handleReset}
                 />
               </main>
             }
