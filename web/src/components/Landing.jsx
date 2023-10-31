@@ -7,12 +7,11 @@ import Hero from './hero/Hero';
 import '../styles/layout/hero.scss';
 import ButtonLink from './ButtonLink';
 
-const Landing = ({ data }) => {
+const Landing = ({ data, nightMode }) => {
   return (
-
-    <div className='container-landing'>
+    <div className="container-landing">
       <main className="main-landing">
-        <Hero />
+        <Hero nightMode={nightMode} />
         <ButtonLink
           className="hero__button"
           text="Crea tu proyecto"

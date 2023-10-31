@@ -20,6 +20,7 @@ const Form = ({
   updateImgProfile,
   updateImgProject,
   handleReset,
+  nightMode,
 }) => {
   const handleInputForm = (ev) => {
     const id = ev.target.id;
@@ -45,21 +46,33 @@ const Form = ({
 
   return (
     <form
-      className="form"
+      className={nightMode ? 'formN' : 'form'}
       onSubmit={(ev) => {
         ev.preventDefault();
       }}
     >
-      <h2 className="form__title">Información</h2>
+      <h2 className={nightMode ? 'formN__title' : 'form__title'}>
+        Información
+      </h2>
 
-      <section className="form__askInfo">
-        <p className="form__askInfo--subtitle">Cuéntanos sobre el proyecto</p>
-        <div className="form__askInfo--line"></div>
+      <section className={nightMode ? 'formN__askInfo' : 'form__askInfo'}>
+        <p
+          className={
+            nightMode ? 'formN__askInfo--subtitle' : 'form__askInfo--subtitle'
+          }
+        >
+          Cuéntanos sobre el proyecto
+        </p>
+        <div
+          className={nightMode ? 'formN__askInfo--line' : 'form__askInfo--line'}
+        ></div>
       </section>
 
-      <fieldset className="form__project">
+      <fieldset className={nightMode ? 'formN__project' : 'form__project'}>
         <input
-          className="form__project--input"
+          className={
+            nightMode ? 'formN__project--input' : 'form__project--input'
+          }
           type="text"
           placeholder="Nombre del proyecto *"
           name="name"
@@ -70,7 +83,9 @@ const Form = ({
         />
         <p className="errorMessage">{errorName}</p>
         <input
-          className="form__project--input"
+          className={
+            nightMode ? 'formN__project--input' : 'form__project--input'
+          }
           type="text"
           name="slogan"
           id="slogan"
@@ -82,7 +97,9 @@ const Form = ({
         <p className="errorMessage">{errorSlogan}</p>
         <div className="juntos">
           <input
-            className="form__project--input"
+            className={
+              nightMode ? 'formN__project--input' : 'form__project--input'
+            }
             type="text"
             name="repo"
             id="repo"
@@ -93,7 +110,9 @@ const Form = ({
           />
           <p className="errorMessage">{errorRepo}</p>
           <input
-            className="form__project--input"
+            className={
+              nightMode ? 'formN__project--input' : 'form__project--input'
+            }
             type="text"
             placeholder="Demo *"
             name="demo"
@@ -105,7 +124,9 @@ const Form = ({
           <p className="errorMessage">{errorDemo}</p>
         </div>
         <input
-          className="form__project--input"
+          className={
+            nightMode ? 'formN__project--input' : 'form__project--input'
+          }
           type="text"
           placeholder="Tecnologías *"
           name="technologies"
@@ -116,7 +137,9 @@ const Form = ({
         />
         <p className="errorMessage">{errorTechnologies}</p>
         <textarea
-          className="form__project--textarea"
+          className={
+            nightMode ? 'formN__project--textarea' : 'form__project--textarea'
+          }
           type="text"
           placeholder="Descripción *"
           name="desc"
@@ -128,14 +151,26 @@ const Form = ({
         <p className="errorMessage">{errorDesc}</p>
       </fieldset>
 
-      <section className="form__autorInfo">
-        <p className="form__autorInfo--subtitle">Cuéntanos sobre la autora</p>
-        <hr className="form__autorInfo--line" />
+      <section className={nightMode ? 'formN__autorInfo' : 'form__autorInfo'}>
+        <p
+          className={
+            nightMode
+              ? 'formN__autorInfo--subtitle'
+              : 'form__autorInfo--subtitle'
+          }
+        >
+          Cuéntanos sobre la autora
+        </p>
+        <hr
+          className={
+            nightMode ? 'formN__autorInfo--line' : 'form__autorInfo--line'
+          }
+        />
       </section>
 
-      <fieldset className="form__autor">
+      <fieldset className={nightMode ? 'formN__autor' : 'form__autor'}>
         <input
-          className="form__autor--input"
+          className={nightMode ? 'formN__autor--input' : 'form__autor--input'}
           type="text"
           placeholder="Nombre *"
           name="autor"
@@ -146,7 +181,7 @@ const Form = ({
         />
         <p className="errorMessage">{errorAutor}</p>
         <input
-          className="form__autor--input"
+          className={nightMode ? 'formN__autor--input' : 'form__autor--input'}
           type="text"
           placeholder="Trabajo *"
           name="job"

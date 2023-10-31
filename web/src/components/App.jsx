@@ -43,6 +43,8 @@ function App() {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
+  const [nightMode, setNightMode] = useState(false);
+
   const updateImgProfile = (imgProfile) => {
     setData({ ...data, image: imgProfile });
     storage.set('infoFormLS', { ...data, image: imgProfile });
@@ -87,6 +89,10 @@ function App() {
     storage.clear();
   };
 
+  const handleMode = (value) => {
+    setNightMode(value);
+  };
+
   const handleCreateProject = () => {
     let hasError = false;
 
@@ -128,16 +134,19 @@ function App() {
   //html
   return (
     <>
-      <div className="containerDay">
-        <Header />
+      <div className={nightMode ? 'containerN' : 'containerDay'}>
+        <Header nightMode={nightMode} handleMode={handleMode} />
 
         <Routes>
-          <Route path="/" element={<Landing data={data} />} />
+          <Route
+            path="/"
+            element={<Landing data={data} nightMode={nightMode} />}
+          />
           <Route
             path="/create"
             element={
               <main className="main">
-                <Hero />
+                <Hero nightMode={nightMode} />
                 <ButtonLink
                   className="hero__button"
                   text="Ver proyectos"
@@ -161,6 +170,7 @@ function App() {
                   updateImgProfile={updateImgProfile}
                   updateImgProject={updateImgProject}
                   handleReset={handleReset}
+                  nightMode={nightMode}
                 />
               </main>
             }

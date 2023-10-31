@@ -19,6 +19,7 @@ const Project = ({
   updateImgProfile,
   updateImgProject,
   handleReset,
+  nightMode,
 }) => {
   return (
     <section className="section">
@@ -41,6 +42,7 @@ const Project = ({
         updateImgProfile={updateImgProfile}
         updateImgProject={updateImgProject}
         handleReset={handleReset}
+        nightMode={nightMode}
       />
     </section>
   );
