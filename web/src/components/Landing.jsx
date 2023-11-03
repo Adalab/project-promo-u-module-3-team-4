@@ -29,7 +29,13 @@ const Landing = ({ nightMode }) => {
         />
         <section className="section-landing">
           {listProject.map((project) => {
-            return <Card data={project} classLanding="preview_autor-landing" />;
+            return (
+              <Card
+                data={project}
+                classLanding="preview_autor-landing"
+                key={project.idProject}
+              />
+            );
           })}
         </section>
       </main>

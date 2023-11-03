@@ -24,7 +24,12 @@ app.listen(port, () => {
 });
 app.get('/listproject', async (req, res) => {
   const conn = await getConnection();
-  const queryproject = 'SELECT * FROM project';
+  // const queryproject = 'SELECT * FROM project';
+  const queryproject = `
+  SELECT project.*, autor.autor, autor.job, autor.image
+  FROM project
+  LEFT JOIN autor ON project.fk_autor = autor.idAutor
+`;
 
   const [result] = await conn.query(queryproject);
 
