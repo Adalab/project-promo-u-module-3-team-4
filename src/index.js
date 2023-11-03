@@ -24,9 +24,10 @@ app.listen(port, () => {
 });
 app.get('/listproject', async (req, res) => {
   const conn = await getConnection();
-  const queryproject = 'select * from project';
+  const queryproject = 'SELECT * FROM project';
 
   const [result] = await conn.query(queryproject);
+
   conn.end();
   res.json({
     msj: 'Todo muy bien',
@@ -35,23 +36,6 @@ app.get('/listproject', async (req, res) => {
 });
 
 //API
-
-//Endpoints
-//Metodo:
-//GET: devolver datos
-//POST: insertar datos
-//PUT: actualiza
-//DELETE: eliminar
-
-// app.get('/api/adalabers', (request, response) => {
-//   //BUSCAR LAS ADALABERS EN LA BASES DE DATOS
-//   const adalabers = [{ nombre: 'Alba' }, { nombre: 'Barbara' }];
-//   response.json(adalabers);
-// });
-
-// app.get('/api/profes', (request, response) => {
-//   response.send('Hola profes');
-// });
 
 //Servidor estáticos: mostrar información de ficheros que no cambia
 const staticServerPath = './web/dist/';

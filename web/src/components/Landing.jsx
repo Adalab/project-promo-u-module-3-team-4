@@ -6,8 +6,18 @@ import '../styles/layout/Landing.scss';
 import Hero from './hero/Hero';
 import '../styles/layout/hero.scss';
 import ButtonLink from './ButtonLink';
+import api from '../services/api';
+import { useEffect, useState } from 'react';
 
-const Landing = ({ data, nightMode }) => {
+const Landing = ({ nightMode }) => {
+  const [listProject, setListProject] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await api.getDataProjects();
+      setListProject(data.data);
+    };
+    fetchData();
+  }, []);
   return (
     <div className="container-landing">
       <main className="main-landing">
@@ -18,7 +28,9 @@ const Landing = ({ data, nightMode }) => {
           root="create"
         />
         <section className="section-landing">
-          <Card data={data} />
+          {listProject.map((project) => {
+            return <Card data={project} />;
+          })}
         </section>
       </main>
     </div>
