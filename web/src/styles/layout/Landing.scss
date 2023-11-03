@@ -19,15 +19,20 @@
   padding-top: 7rem;
 
   @media (min-width: 1024px) {
-    // height: 41rem;
+
     padding-top: 10rem;
     grid-template-columns: 1fr 1fr;
   }
+  @media (min-width: 1200px) {
 
-  @media (min-width: 1024px) {
-    // height: 41rem;
     padding-top: 10rem;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (min-width: 1900px) {
+
+    padding-top: 10rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 4rem;
   }
 }
 
