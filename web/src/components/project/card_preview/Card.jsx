@@ -2,9 +2,9 @@ import '../../../styles/layout/preview.scss';
 import Profile from './Profile';
 import defaultProfile from '../../../images/avatarnew.png';
 
-const Card = ({ data }) => {
+const Card = ({ data, classLanding }) => {
   return (
-    <section className="preview__autor">
+    <section className={`preview__autor ${classLanding}`}>
       <section className="preview__autor__infoProject">
         <div className="preview__autor__infoProject--div">
           <hr className="preview__autor__infoProject--div--line1" />
