@@ -1,9 +1,16 @@
 import '../../styles/layout/header.scss';
 import logo from '../../images/logo-adalab.png';
+import { FaMoon } from 'react-icons/fa';
+import { FaSun } from 'react-icons/fa';
+import { useState } from 'react';
 
 const Header = ({ nightMode, handleMode }) => {
-  const handleClick = (ev) => {
+  const [isChecked, setIsChecked] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const handleClick = () => {
     handleMode(!nightMode);
+    setIsChecked(!isChecked);
+    setIsHidden(!isHidden);
   };
   return (
     <header className={nightMode ? 'headerN' : 'headerDay'}>
@@ -26,7 +33,14 @@ const Header = ({ nightMode, handleMode }) => {
         </p>
       </div>
 
-      <button onClick={handleClick}>Modo</button>
+      <button className="switch" id="switch" onClick={handleClick}>
+      <span>
+          <FaSun className="fas" />
+        </span>
+        <span>
+          <FaMoon className="fas" />
+        </span>
+      </button>
 
       <a className="headerDay__logo" href="https://adalab.es/">
         <img className="headerDay__logo--img" src={logo} alt="Logo Adalab" />
