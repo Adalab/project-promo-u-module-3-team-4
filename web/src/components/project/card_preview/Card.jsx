@@ -23,7 +23,7 @@ const Card = ({ data, classLanding }) => {
           className="preview__autor__infoProject--desc"
           style={{ whiteSpace: 'pre-line' }}
         >
-          {data.desc ||
+          {data.description ||
             'Product Description \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet faucibus commodo tellus lectus lobortis.'}
         </p>
         <section className="preview__autor__infoProject--tecIcon">
