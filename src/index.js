@@ -7,6 +7,7 @@ const mysql = require('mysql2/promise');
 //Crear el servidor
 const app = express(); //mi server
 app.use(cors());
+app.set("view engine", "ejs")
 app.use(express.json({ limit: "25mb" }));
 async function getConnection() {
   const connection = await mysql.createConnection({
@@ -51,8 +52,22 @@ app.post('/createproject', async (req ,res) => {
   const [resultProject] = await conn.query(insertProject, [body.name, body.slogan, body.technologies, body.repo, body.demo, body.description, body.photo, resultAutor.insertId]);
   res.json ({
     success: true,
-    cardUrl: 'http://localhost:5001/project/' + resultProject.insertId,
+    previewUrl: 'http://localhost:5001/project/' + resultProject.insertId,
   });
+});
+
+app.get("project/:idproject", async (req, res) => {
+	const id = req.params.idproject
+	const selectProject = 'SELECT * FROM project WHERE idProject= ? INNER JOIN autor ON project.fk_autor = autor.idAutor';
+
+	const conn = await getConnection();
+	const [results] = await conn.query(selectProject, [id]);
+
+	if(results.length === 0){
+		res.render("not found")
+	}else {
+		res.render("detailProject", 		results[0])
+	}
 });
 
 //API

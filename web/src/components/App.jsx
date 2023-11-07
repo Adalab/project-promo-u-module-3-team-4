@@ -22,7 +22,7 @@ function App() {
       slogan: '',
       repo: '',
       demo: '',
-      desc: '',
+      description: '',
       technologies: '',
       job: '',
       autor: '',
@@ -67,7 +67,7 @@ function App() {
     if (data.technologies !== '') {
       setErrorTechnologies('');
     }
-    if (data.desc !== '') {
+    if (data.description !== '') {
       setErrorDesc('');
     }
     if (data.autor !== '') {
@@ -101,7 +101,7 @@ function App() {
       { field: data.name, setError: setErrorName },
       { field: data.slogan, setError: setErrorSlogan },
       { field: data.technologies, setError: setErrorTechnologies },
-      { field: data.desc, setError: setErrorDesc },
+      { field: data.description, setError: setErrorDesc },
       { field: data.autor, setError: setErrorAutor },
       { field: data.job, setError: setErrorJob },
       { field: data.repo, setError: setErrorRepo },

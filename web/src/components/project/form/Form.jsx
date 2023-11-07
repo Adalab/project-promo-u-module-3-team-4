@@ -35,7 +35,7 @@ const Form = ({
       slogan: '',
       repo: '',
       demo: '',
-      desc: '',
+      description: '',
       technologies: '',
       job: '',
       autor: '',
@@ -142,10 +142,10 @@ const Form = ({
           }
           type="text"
           placeholder="Descripción *"
-          name="desc"
-          id="desc"
+          name="description"
+          id="description"
           onChange={handleInputForm}
-          value={data.desc}
+          value={data.description}
           required
         ></textarea>
         <p className="errorMessage">{errorDesc}</p>
