@@ -37,9 +37,9 @@
           </section>
      
       <section class="preview">
-        <img class="photo-project" src="<%= project.photo %>" alt="<%= project.name %>" />
+        <img class="preview-img" src="<%= project.photo %>" alt="<%= project.name %>" />
         <section class="preview-autor">
-            <section class="preview-autor-info-project">
+            <div class="preview-autor-info-project">
                 <div class="preview-autor-info-project-div">
                     <hr class="preview-autor-info-project-div-line1" />
                     <p class="preview-autor-info-project-div-subtitle">
@@ -50,8 +50,8 @@
                 <h2 class="preview-autor-info-project-title"><%= project.name %></h2>
                 <p class="preview-autor-info-project-slogan"><%= project.slogan %></p>
                 <p class="preview-autor-info-project-desc"><%= project.description %></p>
-            </section>
-            <section class="preview-autor-info-tec-icon">
+              
+            <div class="preview-autor-info-tec-icon">
                 <p class="preview-autor-info-tec-icon-technologies">
                     <%= project.technologies %>
                 </p>
@@ -63,12 +63,13 @@
                         <i class="fa-brands fa-github"></i>
                     </a>
                 </div>
-            </section>
-            <section class="preview-autor-info-autor">
+              </div>
+            </div>
+            <div class="preview-autor-info-autor">
                 <img class="profile-pic" src="<%= project.image %>" alt="<%= project.autor %>">
                 <p class="preview-autor-info-autor-job"><%= project.job %></p>
                 <p class="preview-autor-info-autor-name"><%= project.autor %></p>
-            </section>
+            </div>
         </section>
     </section>
     

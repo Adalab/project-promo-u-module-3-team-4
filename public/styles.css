@@ -1,13 +1,13 @@
- * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
 html {
-    font-size: 62.5%;
-  }
+  font-size: 62.5%;
+}
 
 .body {
   background-color: #4a4174;
@@ -19,9 +19,10 @@ html {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 2.2rem;
+  padding: 3rem 2rem;
+  gap: 1rem;
 }
-.header-div{
+.header-div {
   display: flex;
   align-items: center;
   gap: 0.7rem;
@@ -29,16 +30,16 @@ html {
 
 .header-div-icon {
   font-size: 2.6rem;
-  color: #211e2e;
+  color: #dfdee7;
   text-decoration: none;
 }
 
-.header-url{
-  width: 10rem;
-  padding-inline: 2.2rem;
+.header-url {
+  width: 8rem;
+  padding-right: 2.2rem;
 }
 .header-url-img {
-  width: 10rem;
+  width: 8rem;
 }
 .hero {
   display: flex;
@@ -62,19 +63,170 @@ html {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: #dfdfe3;
-  font-size:1.2rem;
+  font-size: 1.2rem;
   text-align: center;
   padding-bottom: 1rem;
-
 }
 
 .preview {
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3.06rem;
 }
 
+.preview-img {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-height: 70vh;
+  max-width: 90vw;
+  object-fit: contain;
+}
+.preview-autor {
+  align-items: center;
+  text-align: start;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  bottom: 70px;
+  color: #3e3e3e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1rem;
+  position: relative;
+  -webkit-transform: scale(80%);
+  transform: scale(80%);
+  width: 100%;
+}
+
+.preview-autor-info-project {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.preview-autor-info-project-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2.24rem;
+}
+
+.preview-autor-info-project-div-line1 {
+  color: #302c42;
+  width: 3.42rem;
+  border: 0;
+  height: 0.2rem;
+  background-image: linear-gradient(to right, #ffffff00, #010101bf);
+}
+.preview-autor-info-project-div-subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+  text-align: center;
+}
+.preview-autor-info-project-div-line2 {
+  color: #302c42;
+  width: 3.42rem;
+  border: 0;
+  height: 0.2rem;
+  background-image: linear-gradient(to right, #ffffff00, #010101bf);
+}
+
+.preview-autor-info-project-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: black;
+  padding-top: 1.17rem;
+  margin-bottom: 1rem;
+}
+
+.preview-autor-info-project-slogan {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #575757;
+  margin-bottom: 1rem;
+}
+.preview-autor-info-project-desc {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #3e3e3e;
+  margin-bottom: 1.5rem;
+  overflow-y: auto;
+}
+
+/* contenedor de las tecnologias */
+.preview-autor-info-tec-icon {
+  border-radius: 20px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding: 5px;
+  text-align: center;
+  width: fit-content;
+}
+
+/* Solo texto */
+.preview-autor-info-tec-icon-technologies {
+  font-family: 'Catamaran', sans-serif;
+  font-weight: 500;
+  background-color: #d3d3d3;
+  border-radius: 2rem;
+  font-size: 1.6rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+/* contenedor iconos */
+.preview-autor-info-tec-icon-div {
+  color: #000;
+  cursor: pointer;
+  font-size: 2rem;
+  padding-top: 0.7rem;
+  text-align: center;
+}
+.preview-autor-info-tec-icon-div-icon {
+  color: #302c42;
+}
+
+.preview-autor-info-autor {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: auto;
+}
+
+.profile-pic {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  height: 150px;
+  margin-bottom: 5px;
+  width: 150px;
+}
+.preview-autor-info-autor-job {
+  font-family: 'Catamaran', sans-serif;
+  text-align: center;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.preview-autor-info-autor-name {
+  font-family: 'Catamaran', sans-serif;
+  font-size: 1.5rem;
+  color: #000000cc;
+}
 
 @media (min-width: 768px) {
-
   .header {
     height: 6.4rem;
     padding-left: 5.5rem;
@@ -88,7 +240,18 @@ html {
   .hero-title {
     font-size: 4rem;
   }
-  .hero-tex {
-    font-size: 1.8rem;
+  .hero-text {
+    font-size: 2rem;
+  }
+  .preview-autor {
+    padding: 3rem;
+    flex-direction: row-reverse;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .preview-autor {
+    max-width: 80rem;
   }
 }
