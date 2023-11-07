@@ -7,6 +7,7 @@ const mysql = require('mysql2/promise');
 //Crear el servidor
 const app = express(); //mi server
 app.use(cors());
+app.use(express.json({ limit: "25mb" }));
 async function getConnection() {
   const connection = await mysql.createConnection({
     host: 'sql.freedb.tech',
