@@ -7,8 +7,8 @@ const mysql = require('mysql2/promise');
 //Crear el servidor
 const app = express(); //mi server
 app.use(cors());
-app.set("view engine", "ejs")
-app.use(express.json({ limit: "25mb" }));
+app.set('view engine', 'ejs');
+app.use(express.json({ limit: '25mb' }));
 async function getConnection() {
   const connection = await mysql.createConnection({
     host: 'sql.freedb.tech',
@@ -42,32 +42,53 @@ app.get('/listproject', async (req, res) => {
   });
 });
 
-app.post('/createproject', async (req ,res) => {
+app.post('/createproject', async (req, res) => {
   const body = req.body;
   console.log(body);
   const insertAutor = 'INSERT INTO autor (autor, job, image) values (?, ?, ?);';
-  const insertProject = 'INSERT INTO project (name, slogan, technologies, repo, demo, description, photo, fk_autor) values (?, ?, ?, ?, ?, ?, ?, ?)';
+  const insertProject =
+    'INSERT INTO project (name, slogan, technologies, repo, demo, description, photo, fk_autor) values (?, ?, ?, ?, ?, ?, ?, ?)';
   const conn = await getConnection();
-  const [resultAutor] = await conn.query(insertAutor, [body.autor, body.job, body.image]);
-  const [resultProject] = await conn.query(insertProject, [body.name, body.slogan, body.technologies, body.repo, body.demo, body.description, body.photo, resultAutor.insertId]);
-  res.json ({
+  const [resultAutor] = await conn.query(insertAutor, [
+    body.autor,
+    body.job,
+    body.image,
+  ]);
+  const [resultProject] = await conn.query(insertProject, [
+    body.name,
+    body.slogan,
+    body.technologies,
+    body.repo,
+    body.demo,
+    body.description,
+    body.photo,
+    resultAutor.insertId,
+  ]);
+  res.json({
     success: true,
     previewUrl: 'http://localhost:5001/project/' + resultProject.insertId,
   });
 });
 
-app.get("project/:idproject", async (req, res) => {
-	const id = req.params.idproject
-	const selectProject = 'SELECT * FROM project WHERE idProject= ? INNER JOIN autor ON project.fk_autor = autor.idAutor';
+app.get('/project/:idproject', async (req, res) => {
+  const id = req.params.idproject;
+  // const selectProject =
+  //   'SELECT * FROM project WHERE idProject=? INNER JOIN autor ON project.fk_autor = autor.idAutor';
+  const selectProject = `
+  SELECT project.*, autor.autor, autor.job, autor.image
+  FROM project
+  INNER JOIN autor ON project.fk_autor = autor.idAutor
+  WHERE project.idProject=?
+`;
 
-	const conn = await getConnection();
-	const [results] = await conn.query(selectProject, [id]);
+  const conn = await getConnection();
+  const [results] = await conn.query(selectProject, [id]);
 
-	if(results.length === 0){
-		res.render("not found")
-	}else {
-		res.render("detailProject", 		results[0])
-	}
+  if (results.length === 0) {
+    res.status(404).json({ message: 'Project not found' });
+  } else {
+    res.render('detailProject', { project: results[0] }); // Pasar los datos a la vista
+  }
 });
 
 //API
