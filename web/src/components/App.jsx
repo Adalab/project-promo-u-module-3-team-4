@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import storage from '../services/localStorage';
-import object from '../services/api';
-const { callToApi, getDataProjects } = object;
+import objectApi from '../services/api';
+//const { callToApi, getDataProjects } = object;
 import '../styles/App.scss';
 import Header from './header/Header';
 import Footer from './footer/Footer';
@@ -115,7 +115,8 @@ function App() {
     });
 
     if (!hasError) {
-      callToApi(data)
+      objectApi
+        .callToApi(data)
         .then((response) => {
           setPreviewUrl(response);
           setSuccessMessage('La tarjeta ha sido creada:');

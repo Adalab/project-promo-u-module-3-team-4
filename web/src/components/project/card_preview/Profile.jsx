@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import '../../../styles/layout/Profile.scss';
 
 function Profile({ avatar, classImage }) {
-  console.log(avatar);
-
   return (
     <div
       className={classImage}

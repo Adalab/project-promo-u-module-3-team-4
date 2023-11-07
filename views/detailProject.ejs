@@ -3,12 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <link rel="stylesheet" href="/styles.css">
+    <script
+    src="https://kit.fontawesome.com/1aa62fa5ff.js"
+    crossorigin="anonymous"
+  ></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500;700&family=Montserrat:wght@300;400;700&family=Poppins:wght@300;400;700&family=Roboto:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <title>Tu proyecto</title>
   </head>
-  <body>
-    <header>Proyectos Molones</header>
-    <main>
+  <body class="body">
+    <header class="header">
+        <div class="header-div">
+          <a class="header-div-icon"> <i class="header-div-icon fa-solid fa-laptop-code"></i>
+          </a>
+        </div>
+        <a class="header-url" href="https://adalab.es/">
+          <img class="header-url-img" src="/logo-adalab.png" alt="Logo Adalab" />
+        </a>
+      </header>
+    <main class="main">
+        <section class="hero">
+            <h1 class="hero-title">
+              Proyectos Molones
+            </h1>
+            <p  class="hero-text">
+              Escaparate en línea para recoger ideas a través de la tecnología
+            </p>
+          </section>
+     
       <section class="preview">
         <img class="photo-project" src="<%= project.photo %>" alt="<%= project.name %>" />
         <section class="preview-autor">

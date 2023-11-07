@@ -12,7 +12,7 @@ const callToApi = (data) => {
     })
     .then((result) => {
       if (result.success) {
-        return result.previewURL;
+        return result.previewUrl;
       } else {
         throw new Error(result.error);
       }
@@ -29,9 +29,9 @@ const getDataProjects = async () => {
   return dataJson;
 };
 
-const object = {
+const objectApi = {
   getDataProjects: getDataProjects,
   callToApi: callToApi,
 };
 
-export default object;
+export default objectApi;
