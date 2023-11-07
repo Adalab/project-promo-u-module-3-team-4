@@ -1,5 +1,5 @@
 const callToApi = (data) => {
-  return fetch('​http://localhost:5001/createproject', {
+  return fetch('http://localhost:5001/createproject', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
@@ -12,7 +12,7 @@ const callToApi = (data) => {
     })
     .then((result) => {
       if (result.success) {
-        return result.cardURL;
+        return result.previewURL;
       } else {
         throw new Error(result.error);
       }

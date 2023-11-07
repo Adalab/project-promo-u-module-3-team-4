@@ -96,3 +96,4 @@ app.get('/project/:idproject', async (req, res) => {
 //Servidor estáticos: mostrar información de ficheros que no cambia
 const staticServerPath = './web/dist/';
 app.use(express.static(staticServerPath));
+app.use(express.static('public'));

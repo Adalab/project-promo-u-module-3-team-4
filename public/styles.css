@@ -1,0 +1,102 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  main {
+    padding: 2em;
+  }
+  
+  .preview {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: #f9f9f9;
+  }
+  
+  .photo {
+    width: 15rem;
+    
+  }
+  
+  .preview__autor {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .preview__autor__infoProject {
+    width: 60%;
+  }
+  
+  .preview__autor__infoProject--div {
+    text-align: center;
+  }
+  
+  .preview__autor__infoProject--subtitle {
+    font-size: 1.2em;
+    color: #007bff;
+  }
+  
+  .preview__autor__infoProject--title {
+    font-size: 1.5em;
+    margin: 0;
+  }
+  
+  .preview__autor__infoProject--slogan {
+    font-size: 1.2em;
+    color: #888;
+  }
+  
+  .preview__autor__infoProject--desc {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  
+  .preview__autor__infoProject--tecIcon {
+    text-align: center;
+  }
+  
+  .preview__autor__infoProject--tecIcon--technologies {
+    font-size: 1.2em;
+    color: #007bff;
+  }
+  
+  .preview__autor__infoProject--tecIcon--div {
+    margin-top: 1em;
+  }
+  
+  .preview__autor__infoProject--tecIcon--div--icon {
+    color: #007bff;
+    font-size: 2em;
+    margin: 0 0.5em;
+  }
+  
+  .profile__pic {
+    border-radius: 50%;
+    max-width: 100px;
+    height: auto;
+    margin: 1em auto;
+    display: block;
+  }
+  
+  .preview__autor__infoAutor {
+    text-align: center;
+  }
+  
+  .preview__autor__infoAutor--job,
+  .preview__autor__infoAutor--autor {
+    font-size: 1.2em;
+    margin: 0;
+    color: #888;
+  }
+  

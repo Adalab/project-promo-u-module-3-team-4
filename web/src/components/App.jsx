@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import storage from '../services/localStorage';
-import callToApi from '../services/api';
+import object from '../services/api';
+const { callToApi, getDataProjects } = object;
 import '../styles/App.scss';
 import Header from './header/Header';
 import Footer from './footer/Footer';

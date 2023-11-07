@@ -4,12 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/public/styles.css">
   </head>
   <body>
     <header>Proyectos Molones</header>
     <main>
-      <h1><%= project.name %></h1>
-      <p><%= project.description %></p>
+      <section className="preview">
+        <img class="photo" src="<%= project.photo %>" alt="<%= project.name %>" />
+        <section className="preview__autor">
+          <section className="preview__autor__infoProject">
+            <div className="preview__autor__infoProject--div">
+              <hr className="preview__autor__infoProject--div--line1" />
+              <p className="preview__autor__infoProject--div--subtitle">
+                Personal Project Card
+              </p>
+              <hr className="preview__autor__infoProject--div--line2" />
+            </div>
+            <h2 className="preview__autor__infoProject--title"><%= project.name %></h1>
+            <p className="preview__autor__infoProject--slogan"><%= project.slogan %></p>
+            <p
+            className="preview__autor__infoProject--desc"><%= project.description %>
+            </p>
+          </section>
+          <section className="preview__autor__infoProject--tecIcon">
+            <p className="preview__autor__infoProject--tecIcon--technologies">
+              <%= project.technologies %>
+            </p>
+            <div className="preview__autor__infoProject--tecIcon--div">
+              <a
+                href="<%= project.demo %>"
+                target="_blank"
+                rel="noreferrer"
+                className="preview__autor__infoProject--tecIcon--div--icon"
+              >
+                <i className="fa-solid fa-globe"></i>
+              </a>
+              <a
+                href="<%= project.repo %>"
+                target="_blank"
+                rel="noreferrer"
+                className="preview__autor__infoProject--tecIcon--div--icon"
+              >
+                <i className="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </section>
+          <section className="preview__autor__infoAutor">
+            <img className="profile__pic" src="<%= project.image %>" alt="<%= project.autor %>">
+      
+            <p className="preview__autor__infoAutor--job">
+              <%= project.job %>
+            </p>
+            <p className="preview__autor__infoAutor--autor">
+              <%= project.autor %>
+            </p>
+          </section>
+          
+        </section>
+  
+
+        </section>
     </main>
   </body>
 </html>
