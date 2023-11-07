@@ -40,6 +40,20 @@ app.get('/listproject', async (req, res) => {
   });
 });
 
+app.post('/createproject', async (req ,res) => {
+  const body = req.body;
+  console.log(body);
+  const insertAutor = 'INSERT INTO autor (autor, job, image) values (?, ?, ?);';
+  const insertProject = 'INSERT INTO project (name, slogan, technologies, repo, demo, description, photo, fk_autor) values (?, ?, ?, ?, ?, ?, ?, ?)';
+  const conn = await getConnection();
+  const [resultAutor] = await conn.query(insertAutor, [body.autor, body.job, body.image]);
+  const [resultProject] = await conn.query(insertProject, [body.name, body.slogan, body.technologies, body.repo, body.demo, body.description, body.photo, resultAutor.insertId]);
+  res.json ({
+    success: true,
+    cardUrl: 'http://localhost:5001/project/' + resultProject.insertId,
+  });
+});
+
 //API
 
 //Servidor estáticos: mostrar información de ficheros que no cambia
