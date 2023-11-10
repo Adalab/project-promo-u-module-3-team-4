@@ -1,5 +1,5 @@
 const callToApi = (data) => {
-  return fetch('http://localhost:5001/createproject', {
+  return fetch('https://sky-react.onrender.com/createproject', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
@@ -24,7 +24,7 @@ const callToApi = (data) => {
 };
 
 const getDataProjects = async () => {
-  const fetchData = await fetch('http://localhost:5001/listproject');
+  const fetchData = await fetch('https://sky-react.onrender.com/listproject');
   const dataJson = await fetchData.json();
   return dataJson;
 };

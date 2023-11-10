@@ -60,7 +60,7 @@ app.post('/createproject', async (req, res) => {
   ]);
   res.json({
     success: true,
-    previewUrl: 'http://localhost:5001/project/' + resultProject.insertId,
+    previewUrl: 'https://sky-react.onrender.com/project/' + resultProject.insertId,
   });
 });
 app.get('/project/:idproject', async (req, res) => {
