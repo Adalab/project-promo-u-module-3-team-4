@@ -40,6 +40,7 @@ const Landing = ({ nightMode }) => {
                   data={project}
                   classLanding="preview__autor__landing"
                   key={project.idProject}
+                  nightMode={nightMode}
                 />
               </a>
             );

@@ -3,15 +3,15 @@ import '../../../styles/layout/preview.scss';
 import Profile from './Profile';
 import defaultProject from '../../../images/projectday.jpg';
 
-const SectionPreview = ({ data }) => {
+const SectionPreview = ({ data, nightMode }) => {
   return (
-    <section className="preview">
+    <section className={nightMode ? 'previewN' : 'preview'}>
       <Profile
         avatar={data.photo || defaultProject}
-        classImage="project__pic"
+        classImage={nightMode ? 'projectN__pic' : 'project__pic'}
       />
 
-      <Card data={data} avatar={data.image} />
+      <Card data={data} avatar={data.image} nightMode={nightMode} />
     </section>
   );
 };

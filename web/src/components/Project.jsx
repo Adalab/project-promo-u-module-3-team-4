@@ -22,8 +22,8 @@ const Project = ({
   nightMode,
 }) => {
   return (
-    <section className="section">
-      <SectionPreview data={data} />
+    <section className={nightMode ? 'sectionN' : 'section'}>
+      <SectionPreview data={data} nightMode={nightMode} />
       <Form
         data={data}
         errorName={errorName}
