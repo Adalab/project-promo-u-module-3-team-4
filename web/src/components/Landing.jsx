@@ -32,7 +32,7 @@ const Landing = ({ nightMode }) => {
             return (
               <Card
                 data={project}
-                classLanding="preview_autor-landing"
+                classLanding="preview__autor__landing"
                 key={project.idProject}
               />
             );

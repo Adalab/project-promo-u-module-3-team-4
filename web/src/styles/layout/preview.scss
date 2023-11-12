@@ -22,7 +22,7 @@
 //   flex-direction: column;
 //   align-items: center;
 //   padding-top: 3.06rem;
-  
+
 //   @media (min-width: 330px) {
 //     width: 40%;
 //   }
@@ -337,8 +337,10 @@
       }
       &--tecIcon {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        gap: 1rem;
         @media (min-width: 768px) {
           display: flex;
           flex-direction: column-reverse;
@@ -379,12 +381,12 @@
       }
     }
     &__infoAutor {
-        width: 13.09rem;
-        padding-right: 0.2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+      width: 13.09rem;
+      padding-right: 0.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       @media (min-width: 768px) {
         width: 18.41rem;
       }
@@ -411,7 +413,7 @@
   }
 }
 
-.iconsLink{
+.iconsLink {
   color: #4a4174;
   font-size: 1rem;
   @media (min-width: 768px) {
