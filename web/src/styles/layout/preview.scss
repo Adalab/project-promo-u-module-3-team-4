@@ -58,7 +58,10 @@
 //     flex-direction: row-reverse;
 //     padding-bottom: 2rem;
 //     padding-right: 1rem;
-//     box-shadow: 0.25rem 0.25rem 1rem #7a8fd4, 0.25rem -0.25rem 1rem #f5f5f5a2, -0.25rem 0.25rem 1.5rem #7a8fd4, -0.25rem -0.25rem 1.5rem #f5f5f5a2, 0.25rem 0 0.5rem #7a8fd4, -0.25rem 0 0.5rem #f5f5f5a2, 0 0.25rem 2rem #7a8fd4, 0 -0.25rem 2rem #f5f5f5a2;
+//     box-shadow: 0.25rem 0.25rem 1rem #7a8fd4, 0.25rem -0.25rem 1rem #f5f5f5a2,
+//       -0.25rem 0.25rem 1.5rem #7a8fd4, -0.25rem -0.25rem 1.5rem #f5f5f5a2,
+//       0.25rem 0 0.5rem #7a8fd4, -0.25rem 0 0.5rem #f5f5f5a2,
+//       0 0.25rem 2rem #7a8fd4, 0 -0.25rem 2rem #f5f5f5a2;
 //     @media (min-width: 768px) {
 //       width: 37.75rem;
 //     }
@@ -95,7 +98,7 @@
 //           width: 3.42rem;
 //           border: 0;
 //           height: 0.2rem;
-//           background-image: linear-gradient(to right,#fff7f7bf, #ffffff00);
+//           background-image: linear-gradient(to right, #fff7f7bf, #ffffff00);
 //           @media (min-width: 768px) {
 //             width: 4.78rem;
 //           }
@@ -159,7 +162,7 @@
 //             height: 1.53rem;
 //             color: black;
 //             text-decoration: none;
-//             @media (min-width: 768px){
+//             @media (min-width: 768px) {
 //               width: 2.65rem;
 //               height: 2.53rem;
 //             }
@@ -201,7 +204,7 @@
 //   }
 // }
 
-// .iconsLink{
+// .iconsLink {
 //   color: white;
 //   font-size: 1rem;
 //   @media (min-width: 768px) {
@@ -278,8 +281,11 @@
     }
     &__infoProject {
       width: 17.11rem;
+      justify-self: center;
+      align-self: center;
       @media (min-width: 768px) {
         width: 23.89rem;
+        padding-right: 1rem;
       }
       &--div {
         display: flex;
@@ -330,9 +336,9 @@
         @include textStyle($poppins, $regular, 0.8rem, $greyishBrown88);
         padding-bottom: 1.81rem;
         overflow-y: auto;
+        text-align: justify;
         @media (min-width: 768px) {
           font-size: 1rem;
-          padding-bottom: 0;
         }
       }
       &--tecIcon {
@@ -342,9 +348,9 @@
         align-items: center;
         gap: 1rem;
         @media (min-width: 768px) {
-          display: flex;
-          flex-direction: column-reverse;
-          align-items: flex-start;
+          // display: flex;
+          // flex-direction: column-reverse;
+          // align-items: flex-start;
         }
         &--technologies {
           @include textStyle($catamaran, $medium, 1rem, $greyishBrown);
@@ -352,10 +358,11 @@
             background-color: rgba(0, 0, 0, 0.05);
             border-radius: 1.2rem;
             font-size: 1.2rem;
-            width: 15.5rem;
-            height: 2.2rem;
+            // width: 15.5rem;
+            // height: 2.2rem;
             text-align: center;
-            transform: translateY(-1rem);
+            padding: 0rem 1rem;
+            // transform: translateY(-1rem);
           }
         }
         &--div {
@@ -363,8 +370,8 @@
           display: flex;
           gap: 0.8rem;
           @media (min-width: 768px) {
-            padding-left: 18rem;
-            transform: translateY(-1rem);
+            // padding-left: 18rem;
+            // transform: translateY(-1rem);
           }
           &--icon {
             display: flex;
