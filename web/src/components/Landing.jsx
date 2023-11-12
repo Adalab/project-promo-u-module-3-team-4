@@ -30,11 +30,18 @@ const Landing = ({ nightMode }) => {
         <section className="section-landing">
           {listProject.map((project) => {
             return (
-              <Card
-                data={project}
-                classLanding="preview__autor__landing"
+              <a
+                className="section-landing__click"
                 key={project.idProject}
-              />
+                href={`https://sky-react.onrender.com/project/${project.idProject}`}
+                target="_blank"
+              >
+                <Card
+                  data={project}
+                  classLanding="preview__autor__landing"
+                  key={project.idProject}
+                />
+              </a>
             );
           })}
         </section>

@@ -31,6 +31,10 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 4rem;
   }
+
+  &__click {
+    text-decoration: none;
+  }
 }
 
 .preview__autor__landing {
