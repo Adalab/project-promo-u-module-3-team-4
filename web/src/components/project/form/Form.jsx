@@ -12,6 +12,8 @@ const Form = ({
   errorAutor,
   errorDemo,
   errorRepo,
+  errorImage,
+  errorPhoto,
   previewUrl,
   successMessage,
   errorMessage,
@@ -44,6 +46,8 @@ const Form = ({
       previewUrl: '',
       successMessage: '',
       errorMessage: '',
+      errorImage: '',
+      errorPhoto: '',
     });
   };
 
@@ -196,16 +200,20 @@ const Form = ({
         <p className="errorMessage">{errorJob}</p>
       </fieldset>
 
-      <section className="section__buttons">
-        <GetAvatar
-          updateAvatar={updateImgProject}
-          text={'Subir foto del proyecto'}
-        />
-        <GetAvatar
-          updateAvatar={updateImgProfile}
-          text={'Subir foto de la autora'}
-        />
+      <section className="section-buttons-error">
+        <div className="section__buttons">
+          <GetAvatar
+            updateAvatar={updateImgProject}
+            text={'Subir foto del proyecto'}
+          />
+          <GetAvatar
+            updateAvatar={updateImgProfile}
+            text={'Subir foto de la autora'}
+          />
+        </div>
+        <p className="errorMessage">{errorImage} </p>
       </section>
+
       <section className="form__button">
         <Butons
           onClick={handleCreateProject}
@@ -224,7 +232,7 @@ const Form = ({
           <>
             <span className="linkMessage">{successMessage}</span>
             <a
-              className="linkMessage"
+              className="linkMessage-a"
               href={previewUrl}
               target="_blank"
               rel="noreferrer"

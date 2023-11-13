@@ -1,22 +1,6 @@
 @import '../core/variables.scss';
 @import '../core/mixin.scss';
 
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0rem 1rem 0rem;
-}
-
-.linkMessage {
-  @include textStyle($montserrat, $bold, 1.5rem, $white);
-}
-
-.errorMessage {
-  @include textStyle($montserrat, $regular, 1.5rem, #fb7474);
-}
-
 // NOCHE
 .formN {
   background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
@@ -503,6 +487,46 @@
     padding-top: 1.74rem;
     gap: 2rem;
   }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0rem 1rem 0rem;
+}
+
+.section-buttons-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.linkMessage {
+  @include textStyle($montserrat, $bold, 1.5rem, $white);
+  text-align: center;
+  @media (min-width: 1024px) {
+    font-size: 2rem;
+  }
+}
+.linkMessage-a {
+  @include textStyle($montserrat, $bold, 1.3rem, $white);
+  text-align: center;
+  &:hover {
+    color: rgb(56, 42, 107);
+  }
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+}
+
+.errorMessage {
+  @include textStyle($montserrat, $bold, 1rem, #700303);
+  text-align: right;
+  //#fb7474
 }
 
 // input:-webkit-autofill,

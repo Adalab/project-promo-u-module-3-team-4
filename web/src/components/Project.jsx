@@ -11,6 +11,8 @@ const Project = ({
   errorAutor,
   errorDemo,
   errorRepo,
+  errorImage,
+  errorPhoto,
   previewUrl,
   successMessage,
   errorMessage,
@@ -34,6 +36,8 @@ const Project = ({
         errorAutor={errorAutor}
         errorRepo={errorRepo}
         errorDemo={errorDemo}
+        errorImage={errorImage}
+        errorPhoto={errorPhoto}
         previewUrl={previewUrl}
         successMessage={successMessage}
         errorMessage={errorMessage}

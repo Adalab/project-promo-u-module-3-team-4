@@ -40,7 +40,8 @@ function App() {
   const [previewUrl, setPreviewUrl] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
+  const [errorImage, setErrorImage] = useState('');
+  const [errorPhoto, setErrorPhoto] = useState('');
   const [nightMode, setNightMode] = useState(false);
 
   const updateImgProfile = (imgProfile) => {
@@ -80,6 +81,12 @@ function App() {
     if (data.demo !== '') {
       setErrorDemo('');
     }
+    if (data.image) {
+      setErrorImage('');
+    }
+    if (data.photo) {
+      setErrorPhoto('');
+    }
   };
 
   const handleReset = (value) => {
@@ -94,6 +101,8 @@ function App() {
     setErrorDesc('');
     setErrorAutor('');
     setErrorJob('');
+    setErrorImage('');
+    setErrorPhoto('');
 
     // Reset success and error messages
     setPreviewUrl('');
@@ -127,6 +136,20 @@ function App() {
         hasError = true;
       }
     });
+
+    const maxImageSize = 43 * 1024; // 43 KB
+    if (!data.image || (data.image.size && data.image.size > maxImageSize)) {
+      setErrorImage('Campo obligatorio. No debe superar los 43 KB');
+      hasError = true;
+    } else {
+      setErrorImage('');
+    }
+    if (!data.photo || (data.photo.size && data.photo.size > maxImageSize)) {
+      setErrorPhoto('Campo obligatorio. No debe superar los 43 KB');
+      hasError = true;
+    } else {
+      setErrorPhoto('');
+    }
 
     if (!hasError) {
       objectApi
@@ -178,6 +201,8 @@ function App() {
                   errorAutor={errorAutor}
                   errorRepo={errorRepo}
                   errorDemo={errorDemo}
+                  errorImage={errorImage}
+                  errorPhoto={errorPhoto}
                   previewUrl={previewUrl}
                   successMessage={successMessage}
                   errorMessage={errorMessage}
