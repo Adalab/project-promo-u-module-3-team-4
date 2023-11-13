@@ -28,6 +28,7 @@
   &__text {
     @include textStyle($montserrat, $medium, 1.2rem, $white);
     text-align: center;
+    padding-bottom: 1rem;
     @media (min-width: 768px) {
       font-size: 1.8rem;
     }
@@ -49,6 +50,7 @@
       width: 15.4rem;
       height: 2.9rem;
       font-size: 1.5rem;
+      margin-bottom: 1.5rem;
     }
   }
 }

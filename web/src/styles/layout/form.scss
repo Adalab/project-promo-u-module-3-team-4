@@ -93,6 +93,16 @@
       height: 3.23rem;
       color: $white;
       padding-left: 1.68rem;
+      &:-webkit-autofill {
+        border: solid 0.2rem #4a4174;
+        -webkit-text-fill-color: #ffffff;
+        -webkit-box-shadow: 0 0 0px 1000px #443d65 inset;
+      }
+
+      &:valid {
+        @include textStyle($montserrat, $bold, 1.5rem, #ffffff);
+        -webkit-box-shadow: 0 0 0px 1000px #443d65  inset;
+      }
       &::placeholder {
         @include textStyle($montserrat, $regular, 1rem, $white);
         @media (min-width: 768px) {
@@ -112,6 +122,16 @@
       color: $white;
       padding-top: 1.12rem;
       padding-left: 1.68rem;
+      &:-webkit-autofill {
+        border: solid 0.2rem #4a4174;
+        -webkit-text-fill-color: #ffffff;
+        -webkit-box-shadow: 0 0 0px 1000px #443d65 inset;
+      }
+
+      &:valid {
+        @include textStyle($montserrat, $bold, 1.5rem, #ffffff);
+        -webkit-box-shadow: 0 0 0px 1000px #443d65  inset;
+      }
       &::placeholder {
         @include textStyle($montserrat, $regular, 1rem, $white);
         @media (min-width: 1024px) {
@@ -186,6 +206,16 @@
       height: 3.23rem;
       color: $white;
       padding-left: 1.68rem;
+      &:-webkit-autofill {
+        border: solid 0.2rem #4a4174;
+        -webkit-text-fill-color: #ffffff;
+        -webkit-box-shadow: 0 0 0px 1000px #443d65 inset;
+      }
+
+      &:valid {
+        @include textStyle($montserrat, $bold, 1.5rem, #ffffff);
+        -webkit-box-shadow: 0 0 0px 1000px #443d65  inset;
+      }
       &::placeholder {
         @include textStyle($montserrat, $regular, 1rem, $white);
         @media (min-width: 1024px) {
@@ -214,6 +244,7 @@
       border-radius: 4rem;
       background-image: linear-gradient(to right, $darkLilac -2%, #c0b7e8 98%);
       padding-inline: 1.4rem;
+      cursor: pointer;
       @media (min-width: 1024px) {
         width: 16rem;
         height: 4.12rem;
@@ -235,6 +266,7 @@
       border-radius: 4rem;
       background-image: linear-gradient(to right, $darkLilac -2%, #c0b7e8 98%);
       padding-inline: 1.4rem;
+      cursor: pointer;
       @media (min-width: 1024px) {
         width: 18.4rem;
         height: 4.12rem;

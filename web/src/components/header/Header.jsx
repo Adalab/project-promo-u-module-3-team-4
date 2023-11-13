@@ -33,7 +33,8 @@ const Header = ({ nightMode, handleMode }) => {
         </p>
       </div>
 
-      <button className="switch" id="switch" onClick={handleClick}>
+      <button onClick={handleClick} className={`${isChecked ? 'active' : ''} switch`}>
+
         <span>
           <FaSun className="fas" />
         </span>
