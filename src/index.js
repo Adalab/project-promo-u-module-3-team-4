@@ -23,7 +23,6 @@ app.listen(port, () => {
 });
 app.get('/listproject', async (req, res) => {
   const conn = await getConnection();
-  // const queryproject = 'SELECT * FROM project';
   const queryproject = `
   SELECT project.*, autor.autor, autor.job, autor.image
   FROM project
@@ -66,8 +65,7 @@ app.post('/createproject', async (req, res) => {
 });
 app.get('/project/:idproject', async (req, res) => {
   const id = req.params.idproject;
-  // const selectProject =
-  //   'SELECT * FROM project WHERE idProject=? INNER JOIN autor ON project.fk_autor = autor.idAutor';
+
   const selectProject = `
   SELECT project.*, autor.autor, autor.job, autor.image
   FROM project
@@ -79,7 +77,7 @@ app.get('/project/:idproject', async (req, res) => {
   if (results.length === 0) {
     res.status(404).render('notFound');
   } else {
-    res.render('detailProject', { project: results[0] }); // Pasar los datos a la vista
+    res.render('detailProject', { project: results[0] });
   }
 });
 
@@ -88,11 +86,9 @@ app.delete('/project/:idproject', async (req, res) => {
   const conn = await getConnection();
 
   try {
-    // Eliminar primero de la tabla de proyectos
     const deleteProjectQuery = 'DELETE FROM project WHERE idProject=?';
     await conn.query(deleteProjectQuery, [id]);
 
-    // Luego, eliminar de la tabla de autores (puedes ajustar esto según tus necesidades)
     const deleteAutorQuery = 'DELETE FROM autor WHERE idAutor=?';
     await conn.query(deleteAutorQuery, [id]);
 
@@ -103,8 +99,6 @@ app.delete('/project/:idproject', async (req, res) => {
     conn.end();
   }
 });
-
-
 
 //API
 //Servidor estáticos: mostrar información de ficheros que no cambia

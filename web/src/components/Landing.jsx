@@ -1,7 +1,4 @@
 import Card from './project/card_preview/Card';
-import SectionPreview from './project/card_preview/SectionPreview';
-import Profile from './project/card_preview/Profile';
-import Imagen from '../images/projectday.jpg';
 import '../styles/layout/Landing.scss';
 import Hero from './hero/Hero';
 import '../styles/layout/hero.scss';
@@ -18,6 +15,21 @@ const Landing = ({ nightMode }) => {
     };
     fetchData();
   }, []);
+
+  const handleDeleteProject = async (projectId) => {
+    try {
+      const message = await api.deleteProject(projectId);
+      console.log(message); // Registra el mensaje de éxito si es necesario
+      // Ahora, actualiza el estado para reflejar los cambios (eliminar el proyecto eliminado)
+      setListProject((proyectosPrevios) =>
+        proyectosPrevios.filter((proyecto) => proyecto.idProject !== projectId)
+      );
+    } catch (error) {
+      console.error('Error al eliminar el proyecto:', error);
+      // Maneja el error, muestra un mensaje al usuario, etc.
+    }
+  };
+
   return (
     <div className="container-landing">
       <main className="main-landing">
@@ -30,19 +42,22 @@ const Landing = ({ nightMode }) => {
         <section className="section-landing">
           {listProject.map((project) => {
             return (
-              <a
-                className="section-landing__click"
-                key={project.idProject}
-                href={`https://sky-react.onrender.com/project/${project.idProject}`}
-                target="_blank"
-              >
-                <Card
-                  data={project}
-                  classLanding="preview__autor__landing"
-                  key={project.idProject}
-                  nightMode={nightMode}
-                />
-              </a>
+              <div key={project.idProject}>
+                <a
+                  className="section-landing__click"
+                  href={`https://sky-react.onrender.com/project/${project.idProject}`}
+                  target="_blank"
+                >
+                  <Card
+                    data={project}
+                    classLanding="preview__autor__landing"
+                    nightMode={nightMode}
+                  />
+                </a>
+                <button onClick={() => handleDeleteProject(project.idProject)}>
+                  Eliminar
+                </button>
+              </div>
             );
           })}
         </section>
