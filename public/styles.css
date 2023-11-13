@@ -10,7 +10,10 @@ html {
 }
 
 .body {
-  background-color: #4a4174;
+  background-image: url(../web/src/images/tarde.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .header {
@@ -59,6 +62,43 @@ html {
     0.025rem 0 0.1rem #ffffff, -0.025rem 0 0.1rem #ffffff,
     0 0.025rem 0.25rem #ffffff, 0 -0.025rem 0.25rem #ffffff;
 }
+.hero-div {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+.hero-div-btn{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: white;
+  padding: 0.2rem;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  width: 11.64rem;
+  height: 2.19rem;
+  background-color: #7a8fd4;
+  border: solid 0.2rem #4a4174;
+  box-shadow: 0.25rem 0.25rem 1rem #fff, 0.25rem -0.25rem 1rem #f5f5f5,
+    -0.25rem 0.25rem 1.5rem #fff, -0.25rem -0.25rem 1.5rem #f5f5f5,
+    0.25rem 0 0.5rem #fff, -0.25rem 0 0.5rem #f5f5f5, 0 0.25rem 2rem #fff,
+    0 -0.25rem 2rem #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 768px){
+      width: 15.64rem;
+      height: 3.19rem;
+      font-size: 1.5rem;
+    }
+    @media (min-width: 1024px){
+      width: 17.64rem;
+      height: 4.19rem;
+      font-size: 1.5rem;
+    }
+}
+
 .hero-text {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
@@ -79,9 +119,9 @@ html {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  max-height: 70vh;
-  max-width: 90vw;
+  height: 45rem;
   object-fit: contain;
+  border-radius: 1rem;
 }
 .preview-autor {
   align-items: center;
@@ -207,7 +247,7 @@ html {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 50%;
+  border-radius: 1rem;
   height: 150px;
   margin-bottom: 5px;
   width: 150px;
