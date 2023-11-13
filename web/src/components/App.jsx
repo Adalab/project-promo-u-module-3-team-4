@@ -109,6 +109,9 @@ function App() {
       setError(
         !field || !field.match(allowedCharacters) ? 'Campo Obligatorio' : ''
       );
+      if (!field || !field.match(allowedCharacters)) {
+        hasError = true;
+      }
     });
 
     if (!hasError) {
