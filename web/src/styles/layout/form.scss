@@ -10,11 +10,11 @@
 }
 
 .linkMessage {
-  @include textStyle($montserrat, $bold, 1rem, $white);
+  @include textStyle($montserrat, $bold, 1.5rem, $white);
 }
 
 .errorMessage {
-  @include textStyle($montserrat, $regular, 1rem, #fb7474);
+  @include textStyle($montserrat, $regular, 1.5rem, #fb7474);
 }
 
 // NOCHE
@@ -101,7 +101,7 @@
 
       &:valid {
         @include textStyle($montserrat, $bold, 1.5rem, #ffffff);
-        -webkit-box-shadow: 0 0 0px 1000px #443d65  inset;
+        -webkit-box-shadow: 0 0 0px 1000px #443d65 inset;
       }
       &::placeholder {
         @include textStyle($montserrat, $regular, 1rem, $white);
@@ -130,7 +130,7 @@
 
       &:valid {
         @include textStyle($montserrat, $bold, 1.5rem, #ffffff);
-        -webkit-box-shadow: 0 0 0px 1000px #443d65  inset;
+        -webkit-box-shadow: 0 0 0px 1000px #443d65 inset;
       }
       &::placeholder {
         @include textStyle($montserrat, $regular, 1rem, $white);
@@ -214,7 +214,7 @@
 
       &:valid {
         @include textStyle($montserrat, $bold, 1.5rem, #ffffff);
-        -webkit-box-shadow: 0 0 0px 1000px #443d65  inset;
+        -webkit-box-shadow: 0 0 0px 1000px #443d65 inset;
       }
       &::placeholder {
         @include textStyle($montserrat, $regular, 1rem, $white);

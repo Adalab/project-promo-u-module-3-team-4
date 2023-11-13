@@ -42,7 +42,7 @@ const Landing = ({ nightMode }) => {
         <section className="section-landing">
           {listProject.map((project) => {
             return (
-              <div key={project.idProject}>
+              <div className="landing-div" key={project.idProject}>
                 <a
                   className="section-landing__click"
                   href={`https://sky-react.onrender.com/project/${project.idProject}`}
@@ -54,8 +54,13 @@ const Landing = ({ nightMode }) => {
                     nightMode={nightMode}
                   />
                 </a>
-                <button onClick={() => handleDeleteProject(project.idProject)}>
-                  Eliminar
+                <button
+                  className="landing-delete__button"
+                  onClick={() => handleDeleteProject(project.idProject)}
+                >
+                  <i class="lan-del-icon fa-regular fa-trash-can"></i>
+                  <span className="lan-del-text">Eliminar Proyecto</span>
+                  <i class="lan-del-icon fa-regular fa-hand-point-up"></i>
                 </button>
               </div>
             );

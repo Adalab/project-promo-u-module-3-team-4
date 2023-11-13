@@ -41,6 +41,9 @@ const Form = ({
       autor: '',
       image: '',
       photo: '',
+      previewUrl: '',
+      successMessage: '',
+      errorMessage: '',
     });
   };
 

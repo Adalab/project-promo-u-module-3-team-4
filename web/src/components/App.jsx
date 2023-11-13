@@ -1,12 +1,9 @@
 import { useState } from 'react';
 import storage from '../services/localStorage';
 import objectApi from '../services/api';
-//const { callToApi, getDataProjects } = object;
 import '../styles/App.scss';
 import Header from './header/Header';
 import Footer from './footer/Footer';
-import SectionPreview from './project/card_preview/SectionPreview';
-import Form from './project/form/Form';
 import Hero from './hero/Hero';
 import Landing from './Landing';
 import Project from './Project';

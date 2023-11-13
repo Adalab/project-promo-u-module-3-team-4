@@ -61,7 +61,7 @@
     background-image: linear-gradient(to right, $darkLilac -2%, #c0b7e8 98%);
     color: #3e3e3e;
     width: 30.2rem;
-    transform: translateY(-5rem);
+    // transform: translateY(-5rem);
     border-radius: 2rem;
     display: flex;
     flex-direction: row-reverse;
@@ -177,7 +177,7 @@
             height: 1.53rem;
             color: #403a5f;
             text-decoration: none;
-            @media (min-width: 1024px){
+            @media (min-width: 1024px) {
               width: 2.5rem;
               height: 2.5rem;
             }
@@ -287,7 +287,7 @@
     background-color: white;
     color: #3e3e3e;
     width: 30.2rem;
-    transform: translateY(-5rem);
+    // transform: translateY(-5rem);
     border-radius: 2rem;
     display: flex;
     flex-direction: row-reverse;
@@ -400,7 +400,7 @@
             height: 1.53rem;
             color: black;
             text-decoration: none;
-            @media (min-width: 1024px){
+            @media (min-width: 1024px) {
               width: 2.5rem;
               height: 2.5rem;
             }
@@ -451,12 +451,11 @@
 
 .fa-globe {
   @media (min-width: 1024px) {
-  font-size: 2rem;
+    font-size: 2rem;
   }
 }
 .fa-github {
   @media (min-width: 1024px) {
     font-size: 2rem;
-    }
+  }
 }
-
