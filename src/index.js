@@ -82,6 +82,30 @@ app.get('/project/:idproject', async (req, res) => {
     res.render('detailProject', { project: results[0] }); // Pasar los datos a la vista
   }
 });
+
+app.delete('/project/:idproject', async (req, res) => {
+  const id = req.params.idproject;
+  const conn = await getConnection();
+
+  try {
+    // Eliminar primero de la tabla de proyectos
+    const deleteProjectQuery = 'DELETE FROM project WHERE idProject=?';
+    await conn.query(deleteProjectQuery, [id]);
+
+    // Luego, eliminar de la tabla de autores (puedes ajustar esto según tus necesidades)
+    const deleteAutorQuery = 'DELETE FROM autor WHERE idAutor=?';
+    await conn.query(deleteAutorQuery, [id]);
+
+    res.json({ success: true, message: 'Project deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Error deleting project' });
+  } finally {
+    conn.end();
+  }
+});
+
+
+
 //API
 //Servidor estáticos: mostrar información de ficheros que no cambia
 const staticServerPath = './src/public-react';
