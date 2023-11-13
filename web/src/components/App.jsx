@@ -85,6 +85,20 @@ function App() {
   const handleReset = (value) => {
     setData(value);
     storage.clear();
+
+    setErrorName('');
+    setErrorSlogan('');
+    setErrorRepo('');
+    setErrorDemo('');
+    setErrorTechnologies('');
+    setErrorDesc('');
+    setErrorAutor('');
+    setErrorJob('');
+
+    // Reset success and error messages
+    setPreviewUrl('');
+    setSuccessMessage('');
+    setErrorMessage('');
   };
 
   const handleMode = (value) => {
