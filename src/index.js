@@ -60,7 +60,8 @@ app.post('/createproject', async (req, res) => {
   ]);
   res.json({
     success: true,
-    previewUrl: 'https://sky-react.onrender.com/project/' + resultProject.insertId,
+    previewUrl:
+      'https://sky-react.onrender.com/project/' + resultProject.insertId,
   });
 });
 app.get('/project/:idproject', async (req, res) => {
@@ -76,7 +77,7 @@ app.get('/project/:idproject', async (req, res) => {
   const conn = await getConnection();
   const [results] = await conn.query(selectProject, [id]);
   if (results.length === 0) {
-    res.status(404).json({ message: 'Project not found' });
+    res.status(404).render('notFound');
   } else {
     res.render('detailProject', { project: results[0] }); // Pasar los datos a la vista
   }
