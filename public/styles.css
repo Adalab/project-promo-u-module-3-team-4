@@ -10,7 +10,7 @@ html {
 }
 
 .body {
-  background-image: url(../web/src/images/tarde.jpeg);
+  background-image: url('./tarde.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
