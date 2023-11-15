@@ -372,8 +372,10 @@ html {
 /****** styles PROJECT NOT FOUND *****/
 
 .body-storm {
-  background-image: url('https://img2.rtve.es/v/5388379?w=1600&preview=1568624298398.j');
-  background-size: 100%;
+  background-image: url('./rayo.jpg');
+  background-position: center;
+  background-size: 500%;
+  background-position-y: 35%;
 }
 
 .error {
@@ -381,7 +383,7 @@ html {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding-top: 5rem;
+  padding-top: 7rem;
 }
 
 .error-div {
@@ -389,23 +391,91 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  padding: 3rem;
+  gap: 1.5rem;
+
   border: solid 0.2rem whitesmoke;
-  background-color: #302c42;
+  background-color: rgba(48, 44, 66, 0.5);
   color: whitesmoke;
-  width: 60rem;
+  width: 25rem;
   border-radius: 1rem;
 }
 
 .error-title {
   font-family: 'Catamaran', sans-serif;
-  font-size: 3rem;
-  width: 50rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  width: 20rem;
+  text-align: center;
 }
 
 .error-message {
   font-family: 'Catamaran', sans-serif;
-  font-size: 2rem;
-  width: 50rem;
+  font-size: 1.5rem;
+  width: 20rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .body-storm {
+    background-position: center;
+    background-size: 360%;
+  }
+  .error {
+    padding-top: 15rem;
+  }
+  .error-div {
+    width: 40rem;
+    padding: 2rem;
+  }
+
+  .error-title {
+    font-size: 1.8rem;
+    width: 30rem;
+  }
+
+  .error-message {
+    font-size: 2rem;
+    width: 30rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .body-storm {
+    background-position: center;
+    background-size: 120%;
+    background-position-y: 35%;
+  }
+  .error {
+    padding-top: 10rem;
+  }
+  .error-div {
+    width: 40rem;
+    padding: 2rem;
+  }
+
+  .error-title {
+    font-size: 1.8rem;
+    width: 30rem;
+  }
+
+  .error-message {
+    font-size: 2rem;
+    width: 30rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .error-div {
+    width: 80rem;
+    padding: 2rem;
+  }
+
+  .error-title {
+    font-size: 2.5rem;
+    width: 60rem;
+  }
+  .error-message {
+    font-size: 2.5rem;
+    width: 60rem;
+  }
 }
