@@ -101,7 +101,7 @@ app.delete('/project/:idproject', async (req, res) => {
 });
 
 //API
-//Servidor estáticos: mostrar información de ficheros que no cambia
+
 const staticServerPath = './src/public-react';
 app.use(express.static(staticServerPath));
 app.use(express.static('public'));
