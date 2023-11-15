@@ -372,7 +372,7 @@ html {
 /****** styles PROJECT NOT FOUND *****/
 
 .body-storm {
-  background-image: url('./rayo.jpg');
+  background-image: url('./rayo.jpeg');
   background-position: center;
   background-size: 500%;
   background-position-y: 35%;
@@ -443,7 +443,7 @@ html {
   .body-storm {
     background-position: center;
     background-size: 120%;
-    background-position-y: 35%;
+    background-position-y: 20%;
   }
   .error {
     padding-top: 10rem;
