@@ -230,16 +230,18 @@ const Form = ({
       <section className="card">
         {successMessage && (
           <>
-            <span className="linkMessage">{successMessage}</span>
-            <a
-              className="linkMessage-a"
-              href={previewUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {' '}
-              {previewUrl}
-            </a>
+            <div className='cardMessage'>
+              <span className="linkMessage">{successMessage}</span>
+              <a
+                className="linkMessage-a"
+                href={previewUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {' '}
+                {previewUrl}
+              </a>
+            </div>
           </>
         )}
         {errorMessage && <span className="errorMessage">{errorMessage}</span>}

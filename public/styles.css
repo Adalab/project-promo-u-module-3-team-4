@@ -88,13 +88,13 @@ html {
   justify-content: center;
   align-items: center;
   @media (min-width: 768px) {
-    width: 15.64rem;
+    width: 12.64rem;
     height: 3.19rem;
     font-size: 1.5rem;
   }
   @media (min-width: 1024px) {
-    width: 17.64rem;
-    height: 4.19rem;
+    width: 15.64rem;
+    height: 3.19rem;
     font-size: 1.5rem;
   }
 }
@@ -102,7 +102,7 @@ html {
 .hero-text {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  color: #dfdfe3;
+  color: white;
   font-size: 1.2rem;
   text-align: center;
   padding-bottom: 1rem;
@@ -112,21 +112,30 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3.06rem;
+  padding-top: 2rem;
 }
 
 .preview-img {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 45rem;
+  height: 20rem;
   object-fit: contain;
   border-radius: 1rem;
+  @media (min-width: 500px) {
+    height: 25rem;
+  }
+  @media (min-width: 700px) {
+    height: 35rem;
+  }
+  @media (min-width: 1024px) {
+    height: 45rem;
+  }
 }
 .preview-autor {
   align-items: center;
   text-align: start;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 1.5rem;
   bottom: 70px;
   color: #3e3e3e;
@@ -137,16 +146,32 @@ html {
   position: relative;
   -webkit-transform: scale(80%);
   transform: scale(80%);
-  width: 100%;
+  width: 40rem;
+  margin-top: -3rem;
+  box-shadow: 0.25rem 0.25rem 1rem #7a8fd4, 0.25rem -0.25rem 1rem #f5f5f5a2,
+  -0.25rem 0.25rem 1.5rem #7a8fd4, -0.25rem -0.25rem 1.5rem #f5f5f5a2,
+  0.25rem 0 0.5rem #7a8fd4, -0.25rem 0 0.5rem #f5f5f5a2,
+  0 0.25rem 2rem #7a8fd4, 0 -0.25rem 2rem #f5f5f5a2;
+  @media (min-width: 700px) {
+    width: 70rem;
+  }
+  @media (min-width: 1024px) {
+    width: 70rem;
+  }
+  @media (min-width: 1400px) {
+    width: 90rem;
+  }
 }
 
 .preview-autor-info-project {
-  width: auto;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  @media (min-width: 780px) {
+    padding-left: 3rem;
+  }
 }
 .preview-autor-info-project-div {
   display: flex;
@@ -181,8 +206,14 @@ html {
   font-weight: 500;
   font-size: 1.8rem;
   color: black;
-  padding-top: 1.17rem;
+  padding-top: 1rem;
   margin-bottom: 1rem;
+  @media (min-width: 768px) {
+    font-size: 2.4rem;
+  }
+  @media (min-width: 1400px) {
+    font-size: 3rem;
+  }
 }
 
 .preview-autor-info-project-slogan {
@@ -191,6 +222,12 @@ html {
   font-size: 1.6rem;
   color: #575757;
   margin-bottom: 1rem;
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 1400px) {
+    font-size: 2.5rem;
+  }
 }
 .preview-autor-info-project-desc {
   font-family: 'Poppins', sans-serif;
@@ -207,8 +244,10 @@ html {
   font-size: 16px;
   margin-bottom: 15px;
   padding: 5px;
-  text-align: center;
-  width: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* Solo texto */
@@ -220,6 +259,7 @@ html {
   font-size: 1.6rem;
   padding: 0.5rem;
   text-align: center;
+  
 }
 
 /* contenedor iconos */
@@ -227,12 +267,30 @@ html {
   color: #000;
   cursor: pointer;
   font-size: 2rem;
-  padding-top: 0.7rem;
   text-align: center;
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+  @media (min-width: 1024px) {
+    font-size: 3rem;
+    gap: 2rem;
+  }
 }
 .preview-autor-info-tec-icon-div-icon {
   color: #302c42;
+  display: flex;
+  justify-content: center;
+  color: #403a5f;
+  text-decoration: none;
+  padding-top: 0.2rem;
+  transition: transform 0.3s;
 }
+.preview-autor-info-tec-icon-div-icon:hover{
+    transform: scale(1.3);
+    border-radius: 50%;
+    color: black;
+}
+
 
 .preview-autor-info-autor {
   align-items: center;
@@ -251,19 +309,34 @@ html {
   height: 150px;
   margin-bottom: 5px;
   width: 150px;
+  @media (min-width: 1024px) {
+    width: 17rem;
+    height: 17rem;
+  }
+  @media (min-width: 1500px) {
+    width: 19rem;
+    height: 19rem;
+  }
 }
 .preview-autor-info-autor-job {
   font-family: 'Catamaran', sans-serif;
   text-align: center;
   color: #000;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 500;
   margin-bottom: 0.5rem;
+  @media (min-width: 1500px) {
+    font-size: 2.5rem;
+  }
 }
 .preview-autor-info-autor-name {
   font-family: 'Catamaran', sans-serif;
-  font-size: 1.5rem;
+  font-size: 3rem;
+  font-weight: 600;
   color: #000000cc;
+  @media (min-width: 1500px) {
+    font-size: 3.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -299,7 +372,7 @@ html {
 /****** styles PROJECT NOT FOUND *****/
 
 .body-storm {
-  background-image: url('https://img2.rtve.es/v/5388379?w=1600&preview=1568624298398.jpg');
+  background-image: url('https://img2.rtve.es/v/5388379?w=1600&preview=1568624298398.j');
   background-size: 100%;
 }
 

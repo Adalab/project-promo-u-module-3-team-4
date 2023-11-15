@@ -77,22 +77,25 @@
       height: 3.23rem;
       color: $white;
       padding-left: 1.68rem;
-      &:-webkit-autofill {
-        border: solid 0.2rem #4a4174;
-        -webkit-text-fill-color: #ffffff;
-        -webkit-box-shadow: 0 0 0px 1000px #443d65 inset;
-      }
-
+    
       &:valid {
         @include textStyle($montserrat, $bold, 1.5rem, #ffffff);
         -webkit-box-shadow: 0 0 0px 1000px #443d65 inset;
       }
+    
+      &:-webkit-autofill {
+        border: solid 0.2rem #ffffff;  // Color blanco para el borde en el autocompletado
+        -webkit-text-fill-color: #ffffff;
+        -webkit-box-shadow: 0 0 0px 1000px #443d65 inset;
+      }
+    
       &::placeholder {
         @include textStyle($montserrat, $regular, 1rem, $white);
         @media (min-width: 768px) {
           font-size: 1.4rem;
         }
       }
+    
       @media (min-width: 1024px) {
         height: 4.09rem;
       }
@@ -251,6 +254,10 @@
       background-image: linear-gradient(to right, $darkLilac -2%, #c0b7e8 98%);
       padding-inline: 1.4rem;
       cursor: pointer;
+      transition: transform 0.3s;
+      &:hover{
+        transform: scale(1.2);
+      }
       @media (min-width: 1024px) {
         width: 18.4rem;
         height: 4.12rem;
@@ -494,7 +501,25 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0rem 1rem 0rem;
+
+
+}
+
+.cardMessage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0rem 2rem 0rem;
+  border: solid 1px white;
+  border-radius: 10px;
+  margin: 2rem 0rem 2rem 0rem;
+  background-image: linear-gradient(to right, #8176af -2%, #c0b7e8 98%);
+  box-shadow: 0.25rem 0.25rem 1rem #7a8fd4, 0.25rem -0.25rem 1rem rgba(245, 245, 245, 0.6352941176), -0.25rem 0.25rem 1.5rem #7a8fd4, -0.25rem -0.25rem 1.5rem rgba(245, 245, 245, 0.6352941176), 0.25rem 0 0.5rem #7a8fd4, -0.25rem 0 0.5rem rgba(245, 245, 245, 0.6352941176), 0 0.25rem 2rem #7a8fd4, 0 -0.25rem 2rem rgba(245, 245, 245, 0.6352941176);
+  width: 80%;
+  @media (min-width: 1500px) {
+    width: 450px;
+  }
 }
 
 .section-buttons-error {
@@ -506,17 +531,21 @@
 }
 
 .linkMessage {
-  @include textStyle($montserrat, $bold, 1.5rem, $white);
+  @include textStyle($montserrat, $bold, 1.5rem, #4a4174);
   text-align: center;
   @media (min-width: 1024px) {
     font-size: 2rem;
   }
 }
 .linkMessage-a {
-  @include textStyle($montserrat, $bold, 1.3rem, $white);
+  @include textStyle($montserrat, $bold, 1rem, #4a4174);
   text-align: center;
+  transition: transform 0.3s;
+  padding-top: 0.5rem;
   &:hover {
     color: rgb(56, 42, 107);
+    transform: scale(1.2);
+    text-shadow: 0.025rem 0.025rem 1rem #ffffff, 0.025rem -0.025rem 1rem #ffffff, -0.025rem 0.025rem 1rem #ffffff, -0.025rem -0.025rem 1rem #ffffff, 0.025rem 0 0.1rem #ffffff, -0.025rem 0 0.1rem #ffffff, 0 0.025rem 0.25rem #ffffff, 0 -0.025rem 0.25rem #ffffff;
   }
   @media (min-width: 1024px) {
     font-size: 1.5rem;
@@ -524,20 +553,6 @@
 }
 
 .errorMessage {
-  @include textStyle($montserrat, $bold, 1rem, #700303);
-  text-align: right;
-  //#fb7474
+  @include textStyle($montserrat, $bold, 1rem, #c80101);
+  text-align: left;
 }
-
-// input:-webkit-autofill,
-// textarea:-webkit-autofill {
-//   border: solid 0.2rem #4a4174;
-//   -webkit-text-fill-color: #4a4174;
-//   -webkit-box-shadow: 0 0 0px 1000px whitesmoke inset;
-// }
-
-// input:valid,
-// textarea:valid {
-//   @include textStyle($montserrat, $bold, 1.5rem, #4a4174);
-//   -webkit-box-shadow: 0 0 0px 1000px whitesmoke inset;
-// }
